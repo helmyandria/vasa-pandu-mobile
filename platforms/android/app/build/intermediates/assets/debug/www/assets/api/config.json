@@ -1,0 +1,19 @@
+{
+    "host":"10.0.130.19",
+    "__host":"notifvasa.pelindo.co.id",
+    "port": 8884,
+    "ssl": false,
+    "user": "",
+    "pass": "",
+    "subscribe": [
+        "Test"
+    ],
+    "publish": [
+        "Test"
+    ],
+    "keepalive": 0,
+    "apiUrl": "http://svrldeap01.pelindo.co.id:8082",
+    "amsUrl": "http://amsvasa.pelindo.co.id:8080",
+    "version":"v2.2.1",
+    "env":"uat"
+}

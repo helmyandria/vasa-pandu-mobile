@@ -1,0 +1,178 @@
+<!--
+  Generated template for the pemanduan page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>
+      <img src="assets/img/pandulogo.png">
+    </ion-title>
+
+    <span [class]="pnetwork.network_state==true ? 'network_state_on':'network_state_off'"></span>
+    
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="cpage">
+
+    <ion-fab right top class="buttonFab">
+      <button ion-fab color="oranye" (click)="presentPopover($event)"><ion-icon name="create"></ion-icon></button>
+    </ion-fab>
+
+  <ion-grid class="gr-white">
+    <ion-card  class="gr-card">
+      
+      <ion-card-content no-padding>
+        <ion-row>
+          <ion-col>
+            <ion-row>
+              <ion-col>
+                <h2><b>{{data.namaKapal}}</b></h2>
+                <small>{{data.namaAgen}}</small>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-8>
+                    <ion-row class="text-body">
+                      <ion-col col-5>
+                        <br> PPK1
+                        <br> No. SPK Pandu
+                        <br> ASAL <i><small>From</small></i>
+                        <br> TUJUAN <i><small>To</small></i>
+                        <br> STATUS <i><small>State</small></i>
+                      </ion-col>
+                      <ion-col col-7>
+                        <br> {{data.noPpk1}}
+                        <br> {{data.nomorSpkPandu}}
+                        <br> {{data.namaLokasiPanduAsal}}
+                        <br> {{data.namaLokasiPanduTujuan}}
+                        <br> {{data.status}}
+                      </ion-col>
+                    </ion-row>
+                </ion-col>
+                <ion-col col-4>
+                  <ion-row>
+                    <ion-col align="right"><b>Informasi Kapal Tunda</b></ion-col>
+                  </ion-row>
+                  <ion-row *ngFor="let tunda of kapalTunda">
+                    <ion-col col-12 align="right"><i>{{tunda.namaKapal}} ( {{tunda.kodeKapal}} )</i></ion-col>
+                    <!-- <ion-col col-12 align="right">Kode Kapal:{{tunda.kodeKapal}}</ion-col> -->
+                  </ion-row>
+                </ion-col>
+            </ion-row>
+            
+
+            <ion-row>
+              <div [innerHtml]="wizardStep"></div>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+
+    </ion-card>
+  </ion-grid>
+  
+  
+  <ion-grid class="gr-white">
+    <ion-card class="gr-card" *ngIf="isPin">
+      <ion-item>
+        <ion-label>Isi Pin Nahkoda</ion-label>
+        <ion-input type="text" [(ngModel)]="v_pin_nahkoda"></ion-input>
+      </ion-item>
+    </ion-card>
+
+    <ion-card class="gr-card" *ngIf="showWizard">
+      <div *ngFor="let data of wizard; let i=index ">
+        <button color="oranye" class="btnPemanduans" *ngIf="showButton == data.id && data.status == false" ion-button  (press)="nextAction(data.id, i)">  {{ data.title }} </button>
+        <button color="danger" class="btnBatalPemanduan" *ngIf="(showButton == data.id && data.status == false ) " ion-button [disabled]="!showButtonBatal"  (click)="showBatalPandu(i)"> PANDU TURUN </button>
+      </div>
+    </ion-card>
+
+    <ion-card class="gr-card" *ngIf="v_pandu_status" padding>
+      <h2><b>Pandu Status</b></h2>
+      <div id="pandu_status">
+        <ion-grid>
+          <ion-row>
+            <ion-col col-md-7 col-sm-12>
+              <ion-row>
+                <ion-col>
+                  <div class="valueTime" [innerHtml]="htmlText"></div>
+                  <!-- <div class="manualTime" [innerHtml]="manualText | sanitizeHtml"></div> -->
+                  
+                  <div class="resultTime">
+                    <ul class="ulTimeDiff" [innerHtml]="timeDiff"></ul>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col col-md-5>
+              <div class="manual">
+                <div>
+                  <b>Ubah Jam Tahapan Pandu</b>
+                  <p>
+                    <span><small>Anda memungkinkan untuk mengubah jam/tanggal tahapan pengerjaan yang sudah anda kerjakan setelah proses tahapan <b>Selesai Pandu</b></small></span>
+                  </p>
+                </div>
+                <button *ngIf="v_sign" ion-button color="blue-off" (click)="showAdjustTime()">Ubah Jam Tahapan</button>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+    </ion-card>
+  </ion-grid>
+
+  <ion-grid class="gr-white">
+    <ion-card class="gr-card" *ngIf="v_sign" padding>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-row>
+
+            </ion-row>
+            Pandu Profile<br>
+            <ion-row align="center">
+              <ion-col align="center">
+                <ion-avatar>
+                  <div class="avatar">
+                    <img [src]=" profile.photo!=null ?  'data:image/PNG;base64,' + profile.photo : 'assets/img/person.png'">
+                  </div>
+                </ion-avatar>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col align="center">profile 
+                {{profile.namaPetugas}}<br>
+                {{profile.nipPandu}}<br>
+                {{profile.hp}}<br>
+              </ion-col>
+            </ion-row>
+
+          </ion-col>
+          <ion-col>
+            Tanda Tangan Nahkoda Kapal <br> (Vessel master signature)
+            <button ion-button color="danger" clear icon-only (click)="clearSignature()">
+              <ion-icon name='trash' is-active="false"></ion-icon>
+            </button>
+            <canvas></canvas>
+            <!--<signature-pad [options]="signaturePadOptions"></signature-pad>-->
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-card>
+
+    
+  </ion-grid>
+  <!--
+  *ngIf="showButton == data.id && data.status == false"
+-->
+  
+
+</ion-content>

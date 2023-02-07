@@ -1,0 +1,36 @@
+<!-- <ion-content class="main-view">
+    <div class="overlay"></div>
+    <div class="modal_content">
+      <h2>Catatan Pemanduan:</h2>
+      <br>
+      <br>
+      <textarea style="margin: 0px;width: 280px;height: 154px"></textarea>
+      <ion-footer>
+        <ion-toolbar>
+            <button ion-button full (click)="dismiss()">SUBMIT</button>
+        </ion-toolbar>
+      </ion-footer>
+    </div>
+    
+  </ion-content> -->
+
+  
+  
+  <ion-content>
+    <ion-list>
+      <div text-center>
+        <h2>Catatan Pemanduan:</h2>
+      </div>
+    </ion-list>
+    
+    <br>
+    <br>
+    <textarea id="remark-text" [(ngModel)]="remark">
+      {{remark}}
+    </textarea>
+    <ion-footer>
+      <ion-toolbar>
+          <button ion-button full (click)="dismiss()">SUBMIT</button>
+      </ion-toolbar>
+    </ion-footer>
+  </ion-content>

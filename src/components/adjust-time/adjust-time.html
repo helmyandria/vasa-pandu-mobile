@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <div class="hdBatal">
+      ADJUST TIME
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="info">
+    Silahkan sesuaikan tanggal dan jam tahapan pemanduan
+  </div>
+  <form #adjustTime="ngForm" novalidate>
+    <div class="md-content">
+      <ion-list *ngFor="let item of workId">
+          <ion-item *ngIf="item.status">
+            <ion-label>
+                {{item.title}} : 
+            </ion-label>
+            <ion-datetime name="{{item.id}}" #{{item.id}}="ngModel" displayFormat="DD/MM/YYYY HH:mm" [(ngModel)]="item.value"></ion-datetime>
+          </ion-item>
+      </ion-list>
+    </div>
+  <ion-footer>
+    <ion-toolbar>
+      <ion-row>
+        <ion-col>
+            <button color="oranye" ion-button full (click)="cancel()">CANCEL</button>
+        </ion-col>
+        <ion-col>
+            <button color="ijo-tua" type="submit" ion-button full (click)="dismiss(adjustTime)">SUBMIT</button>
+        </ion-col>
+      </ion-row>
+    </ion-toolbar>
+  </ion-footer>
+  </form>
+</ion-content>

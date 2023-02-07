@@ -1,0 +1,18 @@
+{
+    "host": "notifvasa.pelindo.co.id",
+    "port": 8884,
+    "ssl": false,
+    "user": "",
+    "pass": "",
+    "subscribe": [
+        "Test"
+    ],
+    "publish": [
+        "Test"
+    ],
+    "keepalive": 0,
+    "apiUrl": "http://apivasa.pelindo.co.id:8081",
+    "amsUrl": "http://amsvasa.pelindo.co.id:8080",
+    "version": "v2.2.1",
+    "env": "uat"
+}

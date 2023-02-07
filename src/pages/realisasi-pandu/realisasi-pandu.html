@@ -1,0 +1,118 @@
+<!--
+  Generated template for the RealisasiPandu page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <button ion-button icon-only menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <!--<ion-title>SPK Hari Ini</ion-title>-->
+        <ion-title>
+            <img src="assets/img/pandulogo.png">
+        </ion-title>
+        <span [class]="pnetwork.network_state==true ? 'network_state_on':'network_state_off'"></span>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+    <ion-toolbar color="putih">
+        <div text-center>SPK HARI INI</div>
+    </ion-toolbar>
+</ion-content>
+<ion-fab right top class="buttonFab">
+    <button ion-fab (click)="sendPanduRealization()">
+        <ion-icon name="sync"></ion-icon>
+    </button>
+</ion-fab>
+<ion-content class="cpage ndContent">
+    <ion-card (click)="openDetail(data[0]['data'].id, i, data[2]['status'], data[3]['msg_state'])"
+              *ngFor="let data of datas; let i=index" tappable>
+        <ion-card-content no-padding>
+            <ion-row>
+                <ion-col *ngIf="panduid_flag != data[0]['data'].id" col-3
+                         [ngClass]="(data[2]['status'] == 1 ? 'mint-green-box' : 'green-box')">
+                    <!-- <img [src]="(data[2]['status'] == 1 && data[3][msg_state] == 'D' ) ? 'assets/img/unfinished.png':'assets/img/on-going.png'">
+                    <img [src]="(data[2]['status'] == 1 && data[3][msg_state] == 'C' ) ? 'assets/img/finished.png':'assets/img/on-going.png'"> -->
+
+                    <img *ngIf="data[3]['msg_state'] == 'P' && data[2]['status'] == 2" src="assets/img/on-going.png">
+                    <img *ngIf="data[3]['msg_state'] == 'D' && data[2]['status'] == 2" src="assets/img/on-going.png">
+                    <img *ngIf="data[3]['msg_state'] == 'C' && data[2]['status'] == 2" src="assets/img/finished.png">
+                    <img *ngIf="(data[3]['msg_state'] == null && data[2]['status'] == 1) || (data[3]['msg_state'] == 'P' && data[2]['status'] == 1)"
+                         src="assets/img/unfinished.png">
+
+                </ion-col>
+
+                <ion-col *ngIf="panduid_flag == data[0]['data'].id" col-3 [ngClass]="('notif-pandu')">
+                    <img [src]="data[2]['status'] == 1 ? 'assets/img/unfinished.png':'assets/img/on-going.png'">
+                </ion-col>
+
+                <ion-col
+                        [ngClass]="(panduid_flag == data[0]['data'].id ||  ((data[3]['msg_state'] == 'P' && data[2]['status'] == 2) || (data[3]['msg_state'] == 'D' && data[2]['status'] == 2)) ? 'notif-pandu-col':'notif-pandu-col-ds')">
+                    <div *ngIf="panduid_flag == data[0]['data'].id" class="overlay">ON PROGRESS</div>
+                    <div *ngIf="(data[3]['msg_state'] == 'P' && data[2]['status'] == 2) || (data[3]['msg_state'] == 'D' && data[2]['status'] == 2)"
+                         class="overlay">WAITING FOR SYNCHRONIZE
+                    </div>
+                    <ion-row>
+                        <ion-col><h2>{{ data[0]['data'].namaKapal}}</h2></ion-col>
+                        <ion-col align="right">{{ data[0]['data'].jamPenetapanPandu | idformat }}</ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-8>
+                            <ion-row>
+                                <ion-col col-3>PPK1</ion-col>
+                                <ion-col col-9>{{data[0]['data'].noPpk1}}</ion-col>
+                                <!-- <ion-col col-6 align="right">Penggunaan Kapal Tunda</ion-col> -->
+                            </ion-row>
+                            <ion-row>
+                                <ion-col col-3>NO. SPK</ion-col>
+                                <ion-col col-9>{{data[0]['data'].nomorSpkPandu}}</ion-col>
+                            </ion-row>
+                            <ion-row>
+                                <ion-col col-3>ASAL</ion-col>
+                                <ion-col col-9>{{data[0]['data'].asal}}</ion-col>
+                            </ion-row>
+                            <ion-row>
+                                <ion-col col-3>TUJUAN</ion-col>
+                                <ion-col col-9>{{data[0]['data'].tujuan}}</ion-col>
+                            </ion-row>
+                            <ion-row>
+                                <ion-col col-3>STATUS</ion-col>
+                                <ion-col col-9>
+                                    {{ (data[0]['data'].status == 'OHN' && data[0]['data'].flagDone == 2) ? 'SUDAH REALISASI' : data[0]['data'].status }}
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+
+                        <ion-col col-4>
+                            <ion-row *ngIf="data[0]['data'].listKapalTunda">
+                                <ion-col align="right"><b>Informasi Kapal Tunda</b></ion-col>
+                            </ion-row>
+                            <ion-row *ngFor="let tunda of data[0]['data'].listKapalTunda">
+                                <ion-col col-12 align="right"><i>{{tunda.namaKapal}}</i></ion-col>
+                                <!-- <ion-col col-12 align="right">Horse Power:{{tunda.horsePower}}</ion-col> -->
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <!-- <ion-col col-3>AGEN</ion-col> -->
+                        <ion-col col-12 align="center">{{data[0]['data'].namaAgen}}</ion-col>
+                    </ion-row>
+                </ion-col>
+            </ion-row>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+                pullingIcon="arrow-dropdown"
+                pullingText="Pull to refresh"
+                refreshingSpinner="circles"
+                refreshingText="Synchronizing...">
+        </ion-refresher-content>
+    </ion-refresher>
+</ion-content>

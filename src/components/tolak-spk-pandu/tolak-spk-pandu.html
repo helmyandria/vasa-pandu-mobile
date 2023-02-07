@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <div class="hdAlasan">
+      ALASAN TOLAK SPK
+    </div>
+  </ion-navbar>
+</ion-header>
+  
+<ion-content>
+  <div class="divAlasan">
+    <textarea class="textAlasan" [(ngModel)]="alasan"></textarea>
+  </div>
+</ion-content>
+
+<ion-footer no-border>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col col-6>
+        <button color="oranye" ion-button full (click)="cancel()">CANCEL</button>
+      </ion-col>
+      <ion-col col-6>
+        <button color="ijo-tua" ion-button full (click)="ok()">OK</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

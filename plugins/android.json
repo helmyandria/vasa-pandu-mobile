@@ -1,0 +1,89 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-background-mode": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-badge": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-mauron85-background-geolocation": {
+      "GOOGLE_PLAY_SERVICES_VERSION": "11+",
+      "ANDROID_SUPPORT_LIBRARY_VERSION": "23+",
+      "ICON": "@mipmap/icon",
+      "SMALL_ICON": "@mipmap/icon",
+      "ACCOUNT_NAME": "@string/app_name",
+      "ACCOUNT_LABEL": "@string/app_name",
+      "ACCOUNT_TYPE": "$PACKAGE_NAME.account",
+      "CONTENT_AUTHORITY": "$PACKAGE_NAME",
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-vibration": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-console": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-app-version": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-datepicker": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-nativestorage": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-ionic": {
+      "APP_ID": "312eea82",
+      "CHANNEL_NAME": "Master",
+      "UPDATE_API": "https://api.ionicjs.com",
+      "UPDATE_METHOD": "none",
+      "MAX_STORE": "2",
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "uk.co.workingedge.cordova.plugin.sqliteporter": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-local-notification": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-add-swift-support": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    }
+  }
+}

@@ -1,0 +1,469 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {
+      "config.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<feature name=\"AppVersion\"><param name=\"ios-package\" value=\"AppVersion\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"BackgroundMode\"><param name=\"ios-package\" onload=\"true\" value=\"APPBackgroundMode\" /><param name=\"onload\" value=\"true\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"Badge\"><param name=\"ios-package\" value=\"APPBadge\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"DatePicker\"><param name=\"ios-package\" value=\"DatePicker\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"Notification\"><param name=\"ios-package\" value=\"CDVNotification\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"Geolocation\"><param name=\"ios-package\" value=\"CDVLocation\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"SplashScreen\"><param name=\"ios-package\" value=\"CDVSplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"IonicDeploy\"><param name=\"ios-package\" onload=\"true\" value=\"IonicDeploy\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"IonicCordovaCommon\"><param name=\"ios-package\" onload=\"true\" value=\"IonicCordovaCommon\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"LocalNotification\"><param name=\"ios-package\" value=\"APPLocalNotification\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"BackgroundGeolocation\"><param name=\"ios-package\" value=\"CDVBackgroundGeolocation\" /><param name=\"onload\" value=\"true\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"NativeStorage\"><param name=\"ios-package\" value=\"NativeStorage\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"NetworkStatus\"><param name=\"ios-package\" value=\"CDVConnection\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"StatusBar\"><param name=\"ios-package\" value=\"CDVStatusBar\" /><param name=\"onload\" value=\"true\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<preference name=\"StatusBarOverlaysWebView\" value=\"true\" />",
+              "count": 1
+            },
+            {
+              "xml": "<preference name=\"StatusBarStyle\" value=\"lightcontent\" />",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"Vibration\"><param name=\"ios-package\" value=\"CDVVibration\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"SQLitePlugin\"><param name=\"ios-package\" value=\"SQLitePlugin\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"Keyboard\"><param name=\"ios-package\" onload=\"true\" value=\"IonicKeyboard\" /></feature>",
+              "count": 1
+            }
+          ]
+        }
+      },
+      "*-Info.plist": {
+        "parents": {
+          "UIBackgroundModes": [
+            {
+              "xml": "<array><string>audio</string></array>",
+              "count": 1
+            },
+            {
+              "xml": "<array><string>location</string></array>",
+              "count": 1
+            }
+          ],
+          "NSLocationWhenInUseUsageDescription": [
+            {
+              "xml": "<string> </string>",
+              "count": 1
+            },
+            {
+              "xml": "<string>This app requires background location tracking</string>",
+              "count": 1
+            }
+          ],
+          "IonAppId": [
+            {
+              "xml": "<string>312eea82</string>",
+              "count": 1
+            }
+          ],
+          "IonChannelName": [
+            {
+              "xml": "<string>Master</string>",
+              "count": 1
+            }
+          ],
+          "IonApi": [
+            {
+              "xml": "<string>https://api.ionicjs.com</string>",
+              "count": 1
+            }
+          ],
+          "IonUpdateMethod": [
+            {
+              "xml": "<string>none</string>",
+              "count": 1
+            }
+          ],
+          "IonMaxVersions": [
+            {
+              "xml": "<string>2</string>",
+              "count": 1
+            }
+          ],
+          "NSLocationAlwaysUsageDescription": [
+            {
+              "xml": "<string>This app requires background location tracking</string>",
+              "count": 1
+            }
+          ],
+          "NSLocationAlwaysAndWhenInUseUsageDescription": [
+            {
+              "xml": "<string>This app requires background location tracking</string>",
+              "count": 1
+            }
+          ]
+        }
+      }
+    }
+  },
+  "installed_plugins": {
+    "cordova-plugin-add-swift-support": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-app-version": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-background-mode": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-badge": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-compat": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-datepicker": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-geolocation": {
+      "GEOLOCATION_USAGE_DESCRIPTION": " ",
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-ionic": {
+      "APP_ID": "312eea82",
+      "CHANNEL_NAME": "Master",
+      "UPDATE_API": "https://api.ionicjs.com",
+      "UPDATE_METHOD": "none",
+      "MAX_STORE": "2",
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-local-notification": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-mauron85-background-geolocation": {
+      "ALWAYS_USAGE_DESCRIPTION": "This app requires background location tracking",
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-nativestorage": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-vibration": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "uk.co.workingedge.cordova.plugin.sqliteporter": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
+    }
+  },
+  "dependent_plugins": {},
+  "modules": [
+    {
+      "id": "cordova-plugin-app-version.AppVersionPlugin",
+      "file": "plugins/cordova-plugin-app-version/www/AppVersionPlugin.js",
+      "pluginId": "cordova-plugin-app-version",
+      "clobbers": [
+        "cordova.getAppVersion"
+      ]
+    },
+    {
+      "id": "cordova-plugin-device.device",
+      "file": "plugins/cordova-plugin-device/www/device.js",
+      "pluginId": "cordova-plugin-device",
+      "clobbers": [
+        "device"
+      ]
+    },
+    {
+      "id": "cordova-plugin-background-mode.BackgroundMode",
+      "file": "plugins/cordova-plugin-background-mode/www/background-mode.js",
+      "pluginId": "cordova-plugin-background-mode",
+      "clobbers": [
+        "cordova.plugins.backgroundMode",
+        "plugin.backgroundMode"
+      ]
+    },
+    {
+      "id": "cordova-plugin-badge.Badge",
+      "file": "plugins/cordova-plugin-badge/www/badge.js",
+      "pluginId": "cordova-plugin-badge",
+      "clobbers": [
+        "cordova.plugins.notification.badge"
+      ]
+    },
+    {
+      "id": "cordova-plugin-datepicker.DatePicker",
+      "file": "plugins/cordova-plugin-datepicker/www/ios/DatePicker.js",
+      "pluginId": "cordova-plugin-datepicker",
+      "clobbers": [
+        "datePicker"
+      ]
+    },
+    {
+      "id": "cordova-plugin-dialogs.notification",
+      "file": "plugins/cordova-plugin-dialogs/www/notification.js",
+      "pluginId": "cordova-plugin-dialogs",
+      "merges": [
+        "navigator.notification"
+      ]
+    },
+    {
+      "id": "cordova-plugin-geolocation.Coordinates",
+      "file": "plugins/cordova-plugin-geolocation/www/Coordinates.js",
+      "pluginId": "cordova-plugin-geolocation",
+      "clobbers": [
+        "Coordinates"
+      ]
+    },
+    {
+      "id": "cordova-plugin-geolocation.PositionError",
+      "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
+      "pluginId": "cordova-plugin-geolocation",
+      "clobbers": [
+        "PositionError"
+      ]
+    },
+    {
+      "id": "cordova-plugin-geolocation.Position",
+      "file": "plugins/cordova-plugin-geolocation/www/Position.js",
+      "pluginId": "cordova-plugin-geolocation",
+      "clobbers": [
+        "Position"
+      ]
+    },
+    {
+      "id": "cordova-plugin-geolocation.geolocation",
+      "file": "plugins/cordova-plugin-geolocation/www/geolocation.js",
+      "pluginId": "cordova-plugin-geolocation",
+      "clobbers": [
+        "navigator.geolocation"
+      ]
+    },
+    {
+      "id": "cordova-plugin-splashscreen.SplashScreen",
+      "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+      "pluginId": "cordova-plugin-splashscreen",
+      "clobbers": [
+        "navigator.splashscreen"
+      ]
+    },
+    {
+      "id": "cordova-plugin-ionic.common",
+      "file": "plugins/cordova-plugin-ionic/www/common.js",
+      "pluginId": "cordova-plugin-ionic",
+      "clobbers": [
+        "IonicCordova"
+      ],
+      "runs": true
+    },
+    {
+      "id": "cordova-plugin-local-notification.LocalNotification",
+      "file": "plugins/cordova-plugin-local-notification/www/local-notification.js",
+      "pluginId": "cordova-plugin-local-notification",
+      "clobbers": [
+        "cordova.plugins.notification.local"
+      ]
+    },
+    {
+      "id": "cordova-plugin-local-notification.LocalNotification.Core",
+      "file": "plugins/cordova-plugin-local-notification/www/local-notification-core.js",
+      "pluginId": "cordova-plugin-local-notification",
+      "clobbers": [
+        "cordova.plugins.notification.local.core",
+        "plugin.notification.local.core"
+      ]
+    },
+    {
+      "id": "cordova-plugin-local-notification.LocalNotification.Util",
+      "file": "plugins/cordova-plugin-local-notification/www/local-notification-util.js",
+      "pluginId": "cordova-plugin-local-notification",
+      "merges": [
+        "cordova.plugins.notification.local.core",
+        "plugin.notification.local.core"
+      ]
+    },
+    {
+      "id": "cordova-plugin-mauron85-background-geolocation.backgroundGeolocation",
+      "file": "plugins/cordova-plugin-mauron85-background-geolocation/www/backgroundGeolocation.js",
+      "pluginId": "cordova-plugin-mauron85-background-geolocation",
+      "clobbers": [
+        "backgroundGeolocation"
+      ]
+    },
+    {
+      "id": "cordova-plugin-nativestorage.mainHandle",
+      "file": "plugins/cordova-plugin-nativestorage/www/mainHandle.js",
+      "pluginId": "cordova-plugin-nativestorage",
+      "clobbers": [
+        "NativeStorage"
+      ]
+    },
+    {
+      "id": "cordova-plugin-nativestorage.LocalStorageHandle",
+      "file": "plugins/cordova-plugin-nativestorage/www/LocalStorageHandle.js",
+      "pluginId": "cordova-plugin-nativestorage"
+    },
+    {
+      "id": "cordova-plugin-nativestorage.NativeStorageError",
+      "file": "plugins/cordova-plugin-nativestorage/www/NativeStorageError.js",
+      "pluginId": "cordova-plugin-nativestorage"
+    },
+    {
+      "id": "cordova-plugin-network-information.network",
+      "file": "plugins/cordova-plugin-network-information/www/network.js",
+      "pluginId": "cordova-plugin-network-information",
+      "clobbers": [
+        "navigator.connection",
+        "navigator.network.connection"
+      ]
+    },
+    {
+      "id": "cordova-plugin-network-information.Connection",
+      "file": "plugins/cordova-plugin-network-information/www/Connection.js",
+      "pluginId": "cordova-plugin-network-information",
+      "clobbers": [
+        "Connection"
+      ]
+    },
+    {
+      "id": "cordova-plugin-statusbar.statusbar",
+      "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+      "pluginId": "cordova-plugin-statusbar",
+      "clobbers": [
+        "window.StatusBar"
+      ]
+    },
+    {
+      "id": "cordova-plugin-vibration.notification",
+      "file": "plugins/cordova-plugin-vibration/www/vibration.js",
+      "pluginId": "cordova-plugin-vibration",
+      "merges": [
+        "navigator.notification",
+        "navigator"
+      ]
+    },
+    {
+      "id": "cordova-sqlite-storage.SQLitePlugin",
+      "file": "plugins/cordova-sqlite-storage/www/SQLitePlugin.js",
+      "pluginId": "cordova-sqlite-storage",
+      "clobbers": [
+        "SQLitePlugin"
+      ]
+    },
+    {
+      "id": "ionic-plugin-keyboard.keyboard",
+      "file": "plugins/ionic-plugin-keyboard/www/ios/keyboard.js",
+      "pluginId": "ionic-plugin-keyboard",
+      "clobbers": [
+        "cordova.plugins.Keyboard"
+      ],
+      "runs": true
+    },
+    {
+      "id": "uk.co.workingedge.cordova.plugin.sqliteporter.sqlitePorter",
+      "file": "plugins/uk.co.workingedge.cordova.plugin.sqliteporter/www/sqlitePorter.js",
+      "pluginId": "uk.co.workingedge.cordova.plugin.sqliteporter",
+      "clobbers": [
+        "cordova.plugins.sqlitePorter"
+      ]
+    }
+  ],
+  "plugin_metadata": {
+    "cordova-plugin-add-swift-support": "1.7.2",
+    "cordova-plugin-app-version": "0.1.9",
+    "cordova-plugin-device": "2.0.3",
+    "cordova-plugin-background-mode": "0.7.3",
+    "cordova-plugin-badge": "0.8.8",
+    "cordova-plugin-compat": "1.2.0",
+    "cordova-plugin-datepicker": "0.9.3",
+    "cordova-plugin-dialogs": "2.0.2",
+    "cordova-plugin-geolocation": "2.4.3",
+    "cordova-plugin-splashscreen": "4.1.0",
+    "cordova-plugin-ionic": "2.0.4",
+    "cordova-plugin-local-notification": "0.9.0-beta.2",
+    "cordova-plugin-mauron85-background-geolocation": "2.3.6",
+    "cordova-plugin-nativestorage": "2.3.2",
+    "cordova-plugin-network-information": "1.3.4",
+    "cordova-plugin-statusbar": "2.4.3",
+    "cordova-plugin-vibration": "2.1.6",
+    "cordova-plugin-whitelist": "1.3.4",
+    "cordova-sqlite-storage": "5.0.0",
+    "ionic-plugin-keyboard": "2.2.1",
+    "uk.co.workingedge.cordova.plugin.sqliteporter": "1.1.1"
+  }
+}

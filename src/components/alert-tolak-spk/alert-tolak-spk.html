@@ -1,0 +1,98 @@
+<ion-header>
+    <ion-navbar>
+      <div class="hdAlert">
+        Notifikasi Baru
+      </div>
+    </ion-navbar>
+  </ion-header>
+    
+  <ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col >
+                <h1>
+                    Pemberitahuan Baru untuk OHN
+                </h1>
+            </ion-col>
+        </ion-row>
+        <br>
+        <ion-row>
+            <ion-col col-1></ion-col>
+            <ion-col col-5>
+                <ion-text style="font-weight: bold" class="isi">
+                    {{namaKapal}}
+                </ion-text>
+            </ion-col>
+            <ion-col col-6>
+                <ion-text style="font-weight: bold" class="isi">
+                    {{tanggal}}
+                </ion-text>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-1></ion-col>
+            <ion-col col-5>
+                <ion-text class="isi">
+                    PPK1
+                </ion-text>
+            </ion-col>
+            <ion-col col-6>
+                <ion-text class="isi">
+                    {{noPpk1}}
+                </ion-text>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-1></ion-col>
+            <ion-col col-5>
+                <ion-text class="isi">
+                    NO. SPK
+                </ion-text>
+            </ion-col>
+            <ion-col col-6>
+                <ion-text class="isi">
+                    {{nomorSpk}}
+                </ion-text>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-1></ion-col>
+            <ion-col col-5>
+                <ion-text class="isi">
+                    ASAL
+                </ion-text>
+            </ion-col>
+            <ion-col col-6>
+                <ion-text class="isi">
+                    {{asal}}
+                </ion-text>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-1></ion-col>
+            <ion-col col-5>
+                <ion-text class="isi">
+                    TUJUAN
+                </ion-text>
+            </ion-col>
+            <ion-col col-6>
+                <ion-text class="isi">
+                    {{tujuan}}
+                </ion-text>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+  </ion-content>
+  
+  <ion-footer no-border>
+    <ion-toolbar>
+      <ion-row>
+        <ion-col col-6>
+          <button color="oranye" ion-button full (click)="tolak()">TOLAK</button>
+        </ion-col>
+        <ion-col col-6>
+          <button color="ijo-tua" ion-button full (click)="terima()">TERIMA</button>
+        </ion-col>
+      </ion-row>
+    </ion-toolbar>
+  </ion-footer>

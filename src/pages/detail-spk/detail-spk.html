@@ -1,0 +1,105 @@
+<!--
+  Generated template for the DetailSpk page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>
+      <img src="assets/img/pandulogo.png">
+    </ion-title>
+
+    <!-- <span [class]="pnetwork.network_state==true ? 'network_state_on':'network_state_off'"></span> -->
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="cpage">
+  <ion-grid class="gr-white">
+    <ion-card class="gr-card">
+
+      <ion-card-content no-padding>
+        <ion-row>
+          <ion-col>
+            <ion-row>
+              <ion-col>
+                <h2><b>{{datas.namaKapal}}</b></h2>
+                <small>{{datas.namaAgen}}</small>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col width-30>
+                <br> PPK1
+                <br> NO. SPK Pandu
+                <br> PPK JASA
+                <br> ASAL
+                <br> TUJUAN
+                <br> STATUS
+              </ion-col>
+              <ion-col width-70>
+                <br> {{datas.noPpk1}}
+                <br> {{datas.nomorSpkPandu}}
+                <br> {{datas.noPpkJasaPandu}}
+                <br> {{datas.namaLokasiPanduAsal}}
+                <br> {{datas.namaLokasiPanduTujuan}}
+                <br> {{ (datas.status == 'OHN' && datas.flagDone == 2) ? 'SUDAH REALISASI' : datas.status }}
+              </ion-col>
+            </ion-row>
+            
+            
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    
+    </ion-card>
+
+    <ion-card class="gr-card">
+      <ion-row>
+        <div [innerHtml]="wizardStep"></div>
+      </ion-row>
+    </ion-card>
+    
+    <ion-card class="gr-card">
+      <div text-center>
+        <button ion-button icon-left color="ijo-tua" (click)="mulaiPandu()">
+          <ion-icon name="paper-plane"></ion-icon>
+          {{startProgress}}
+        </button>
+
+        <button ion-button icon-left color="oranye" *ngIf="msg_state == 'P' && status == 2" (click)="runPendingState()">
+          <ion-icon name="paper-plane"></ion-icon>
+          Kirim Ulang Realisasi
+        </button>
+      </div>
+    </ion-card>
+  </ion-grid>
+
+
+  <ion-grid class="gr-white">
+    <ion-card class="gr-card">
+      <!-- <div style="height:400px;width:100%;margin:0" id="map-detail"></div> -->
+      <ion-row>
+        <h2><b>Informasi Kapal Tunda</b></h2>
+      </ion-row>
+      <div *ngFor="let dataTunda of tundas">
+        <ion-row>
+            <ion-col width-30>
+                Nama Kapal Tunda<br>
+                Kode Kapal Tunda<br>
+                Horse Power<br>
+            </ion-col>
+            <ion-col width-70>
+                {{dataTunda.namaKapal}}<br>
+                {{dataTunda.kodeKapal}}<br>
+                {{dataTunda.horsePower}}<br>
+            </ion-col>
+        </ion-row>
+      </div>
+    </ion-card>
+  </ion-grid>
+
+</ion-content>

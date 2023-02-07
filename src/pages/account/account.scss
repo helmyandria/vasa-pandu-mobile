@@ -1,0 +1,52 @@
+
+page-account {
+  .avt{
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+    margin: auto;
+    margin-top: 15%;
+    border:4px solid #d8d8d8;
+  }
+
+  .notif-pemanduan{
+        float: right;
+    }
+    
+    .blue-bg{
+        background-color:#363e57;
+        color:#ffffff !important;
+        text-align:center !important;
+    }
+    .blue-pandu{
+        background-color:#232838;
+    }
+    .tb{
+        color:white;
+    }
+
+    .md-card-color{
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100%;
+    }
+    .cl-30{
+        height: 40% !important;
+        background-color: #232838 !important;
+    }
+    .cl-70{
+        height: 60%;
+        background-color:white !important;
+    }
+    .hd-title h1{
+        color: white;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .item-md ion-note {
+        color: black;
+    }
+    .btnLogout{
+        text-align: center;
+    }
+}

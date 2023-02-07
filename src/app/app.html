@@ -1,0 +1,91 @@
+<!-- logged out menu -->
+<ion-menu id="loggedOutMenu" [content]="content">
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content id="sidebar-app" class="outer-content sidebar-app">
+
+    <!--<ion-card class="card-side" color="primary">
+      <div class="card-title"><p>Tantowi Jauhari</p></div>
+      <div class="card-subtitle"></div>
+    </ion-card>-->
+
+    <ion-list>
+      <ion-list-header class="tp">
+        Navigate
+      </ion-list-header>
+      <button ion-item menuClose *ngFor="let p of appPages" (click)="openPage(p)">
+        <ion-icon item-left [name]="p.icon"></ion-icon>
+        {{p.title}}
+      </button>
+    </ion-list>
+
+    <ion-list>
+      <ion-list-header class="tp">
+        Account
+      </ion-list-header>
+      <button class="tp" ion-item menuClose *ngFor="let p of loggedOutPages" (click)="openPage(p)">
+        <ion-icon item-left [name]="p.icon"></ion-icon>
+        {{p.title}}
+      </button>
+    </ion-list>
+
+  </ion-content>
+
+</ion-menu>
+
+<!-- logged in menu -->
+<ion-menu id="loggedInMenu" [content]="content">
+
+  <!--<mq-rawdata></mq-rawdata>-->
+
+  <ion-content id="sidebar-app" class="outer-content cpage">
+    <!--<ion-card class="card-side" color="primary">
+      <div class="card-title">Tantowi Jauhari</div>
+      <div class="card-subtitle"></div>
+    </ion-card>-->
+
+    <ion-list>
+      <ion-list-header class="tp">
+        Navigate
+      </ion-list-header>
+      <button class="tp" ion-item menuClose *ngFor="let p of appPages" (click)="openPage(p)">
+        <ion-icon item-left [name]="p.icon"></ion-icon>
+        
+        <ion-badge class="notif-pemanduan" item-right color="danger" *ngIf="(p.title=='SPK Hari Ini') && (notif==true)">
+          <ion-icon name="notifications"></ion-icon>
+        </ion-badge>
+        {{p.title}}
+      </button>
+    </ion-list>
+
+    <ion-list>
+      <ion-list-header class="tp">
+        Account
+      </ion-list-header>
+      <button class="tp" ion-item menuClose *ngFor="let p of loggedInPages" (click)="openPage(p)">
+        <ion-icon item-left [name]="p.icon"></ion-icon>
+        {{p.title}}
+      </button>
+    </ion-list>
+
+    <ion-list>
+      <ion-list-header class="tp">
+        App Version
+      </ion-list-header>
+      <button class="tp" ion-item>
+        <ion-icon item-left [name]="apps"></ion-icon>
+        Version : {{config.version}}
+      </button>
+    </ion-list>
+
+
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

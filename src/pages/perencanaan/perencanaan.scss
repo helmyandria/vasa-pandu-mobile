@@ -1,0 +1,45 @@
+page-perencanaan {
+    ion-card{
+       background: white !important;
+   }
+
+    .notif-pemanduan{
+        float: right;
+    }
+    
+    img{
+        margin: 0 auto;
+        display: block;
+    }
+    .blue-bg{
+        background-color:#363e57;
+        color:#ffffff !important;
+        text-align:center !important;
+    }
+    .blue-pandu{
+        background-color:#232838;
+    }
+    .green-box{
+        background-color:#232838;
+        display:block;
+        padding: 25px 0px;
+                img{
+                    margin: 0 auto;
+                    display: block;
+                    width:auto;
+                }
+    }
+    .mint-green-box{
+        background-color:color($colors, oranye);
+        display:block;
+        padding: 25px 0px;
+                img{
+                    margin: 0 auto;
+                    display: block;
+                    width:auto;
+                }
+    }
+    .tb{
+        color: white;
+    }
+}

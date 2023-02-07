@@ -1,0 +1,70 @@
+<!--
+  Generated template for the Absensi page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <!--<ion-title>Daftar Absensi</ion-title>-->
+    <ion-title>
+        <img src="assets/img/pandulogo.png">
+    </ion-title>
+    <span [class]="pnetwork.network_state==true ? 'network_state_on':'network_state_off'"></span>
+    
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-fab right top class="buttonFab">
+    <button ion-fab (click)="refreshAbsensiPandu()" ><ion-icon name="sync"></ion-icon></button>  
+  </ion-fab>
+  
+  <ion-grid class="blue-bg">
+    <h3>{{fullname}}</h3>
+    <ion-avatar>
+      <div class="avatar">
+        <img [src]=" photo!=null ?  'data:image/PNG;base64,' + photo : 'assets/img/person.png'">
+      </div>
+    </ion-avatar>
+    <br>
+      <h3>{{ portalProfile.namadit }} </h3>
+      <h3>{{ portalProfile.namasub }}</h3>
+      <h3>{{ portalProfile.namacabang }}</h3>
+    <br>
+    
+    <div>
+      <span>{{mulaiTglAbsen}}</span>
+      <br>
+      <h3>Jam Kehadiran</h3>
+      <h1>{{mulaiJamAbsen}}</h1>
+      <span *ngIf="absenStatus" class="upper">status</span>
+      <span>{{absenStatus}}</span>
+      <h3 class="ket1">{{ketSilahkanAbsen}}</h3>
+      <h3 class="ket2">{{ketAvaiAbsen}}</h3>
+      <h3 class="ket3">{{ketUnavaiAbsen}}</h3>
+      <h3 class="ketShift">{{ketShift}}</h3>
+    </div>
+    <!-- <network-state></network-state> -->
+  </ion-grid>
+  <ion-grid style="padding-bottom:15px;">
+    <button style="width:50%; margin: auto;" ion-button color="blue-off" (click)="showListPetugasPandu()">
+      <span >List Petugas Pandu</span>
+    </button>
+  </ion-grid>
+</ion-content>
+
+<ion-footer no-border>
+  <ion-grid class="blue-pandu">
+    <ion-row>
+      <ion-col><button ion-button block color="blue-off" (click)="absenOff()" [disabled]="btnAbsenOff">OFF</button></ion-col>
+      <ion-col><button ion-button block color="pink-on" (click)="absenOn()" [disabled]="btnAbsenOn">ON</button></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

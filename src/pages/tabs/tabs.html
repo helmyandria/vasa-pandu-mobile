@@ -1,0 +1,5 @@
+<ion-tabs [selectedIndex]="mySelectedIndex">
+  <ion-tab [root]="tab1Root" tabTitle="ABSENSI"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="REALISASI" [tabBadge]="badgeValue>0 ? badgeValue : null" tabBadgeStyle="danger"></ion-tab>
+  <ion-tab [root]="tab3Root" tabTitle="MAP"></ion-tab>
+</ion-tabs>

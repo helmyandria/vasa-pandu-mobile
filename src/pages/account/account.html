@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+        <img src="assets/img/pandulogo.png">
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="cpage" *ngIf="username">
+  <ion-card class="md-card-color cl-30">
+      <div class="hd-title">
+      <img class="avt" src="assets/img/person.png" alt="avatar">        
+        <h1>{{profile.namaPetugas}}</h1>
+      </div>
+  </ion-card>
+  <ion-card class="md-card-color cl-70">
+      <ion-list inset>
+        <ion-item>
+          <ion-icon name='person' item-left></ion-icon>
+          Nip Pandu
+          <ion-note item-right>
+          {{profile.nipPandu}}
+          </ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-icon name='contact' item-left></ion-icon>
+          Real name
+          <ion-note item-right>
+          {{profile.namaPetugas}}
+          </ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-icon name='mail' item-left></ion-icon>
+          Email
+          <ion-note item-right>
+          {{profile.emailPetugas}}
+          </ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-icon name='phone-portrait' item-left></ion-icon>
+          Telephone
+          <ion-note item-right>
+          {{profile.hp}}
+          </ion-note>
+        </ion-item>
+        <ion-item>
+          <button class="btnLogout" ion-item (click)="logout()">Logout</button>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+  
+
+
+</ion-content>

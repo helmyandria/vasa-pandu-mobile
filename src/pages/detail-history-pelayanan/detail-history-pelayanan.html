@@ -1,0 +1,52 @@
+<!--
+  Generated template for the DetailHistoryPelayanan page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>
+        <img src="assets/img/pandulogo.png">
+    </ion-title>
+  </ion-navbar>
+
+  <ion-toolbar color="primary" class="tb">
+    <div text-center ><h4>HISTORY PELAYANAN</h4></div>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="cpage">
+  <ion-card *ngFor="let data of datas" (click)="openHistoryDetail(data.nomorSpkPandu)">
+    <ion-card-content no-padding >
+      <ion-row>
+        <ion-col col-4 width-25 [ngClass]="(data.flagDone == 1 ? 'mint-green-box' : 'green-box')">
+          <img [src]="data.flagDone == 1 ? 'assets/img/unfinished.png':'assets/img/finished.png'">
+        </ion-col>
+        <ion-col width-75>
+          <ion-row>
+            <ion-col>
+              <h2>{{ data.namaKapal}}</h2>
+              <small>{{data.namaAgen}}</small>
+            </ion-col>
+            <ion-col align="right">{{ data.created | idformat }}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-4>
+              PPK1<br>
+              ASAL<br>
+              TUJUAN
+            </ion-col>
+            <ion-col col-8>
+              {{data.noPpk1}}<br>
+              {{data.asal}}<br>
+              {{data.tujuan}}
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

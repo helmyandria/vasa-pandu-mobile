@@ -1,0 +1,4 @@
+#Sat Jun 06 09:48:42 GMT+07:00 2020
+base.0=G\:\\Ionic\\pandu\\vasa-mobile-pandu-dev\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex

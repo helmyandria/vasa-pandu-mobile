@@ -1,0 +1,73 @@
+page-history-pelayanan {
+    ion-card{
+       background: white !important;
+   }
+
+    .notif-pemanduan{
+        float: right;
+    }
+    
+    img{
+        margin: 0 auto;
+        display: block;
+    }
+    .blue-bg{
+        background-color:#363e57;
+        color:#ffffff !important;
+        text-align:center !important;
+    }
+    .blue-pandu{
+        background-color:#232838;
+    }
+    .green-box{
+        background-color:color($colors, ijo-tua);
+        display:block;
+        padding: 25px 0px;
+                img{
+                    margin: 0 auto;
+                    display: block;
+                    width:auto;
+                }
+    }
+    .mint-green-box{
+        background-color:color($colors, oranye);
+        display:block;
+        padding: 25px 0px;
+                img{
+                    margin: 0 auto;
+                    display: block;
+                    width:auto;
+                }
+    }
+    .tb{
+        color:white;
+    }
+
+    .md-card-color{
+        padding: 0 !important;
+        margin: 0 !important;
+        //height: 300px;
+        width: 100%;
+        border-radius: 0 !important;
+        // background-color: #232838 !important;
+        // color: white !important;
+    }
+    .cl-30{
+        height: 30% !important;
+        background-color: #232838 !important;
+    }
+    .cl-70{
+        height: 70%;
+        background-color:white;
+    }
+    .hd-title h1{
+        color: white;
+        position: absolute;
+        top:15%;
+        left:5%;
+    }
+    ion-fab[edge]{
+        top: 27%;
+        right:30px;
+    }
+}

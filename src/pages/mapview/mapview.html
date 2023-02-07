@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+        <img src="assets/img/pandulogo.png">
+    </ion-title>
+    <span [class]="pnetwork.network_state==true ? 'network_state_on':'network_state_off'"></span>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  
+  <div style="height: 100%;width:100%;">
+    <div id="maplog" style="text-align:right;width:100%">
+        <div style="height:56px;width:100%">
+          <ion-toolbar no-border-top color="white">
+            <ion-searchbar 
+              (ionInput)="getItems($event)" 
+              (ionCancel)="onCancel($event)"
+              [showCancelButton]="true"
+              autocomplete="off"
+              placeholder="Pencarian berdasarkan nama kapal">
+            </ion-searchbar>
+          </ion-toolbar>
+          <div>
+            <ion-list [hidden]="!searchItem" >
+              <ion-item (click)="getIndexItem(item)" *ngFor="let item of tempSearchName">
+                {{item}} 
+              </ion-item>
+            </ion-list>
+          </div>
+        </div>
+<!--         
+      Current Latitude: {{locationTracker.lat}}
+      <p>Current Longitude: {{locationTracker.lng}} -->
+          <!-- <ion-list>
+              <ion-item *ngFor="let item of searchName">
+                {{ item }}
+              </ion-item>
+            </ion-list> -->
+    </div>
+    <ion-fab right bottom class="buttonFab">
+      <button ion-fab color="oranye"><ion-icon name="arrow-dropup"></ion-icon></button>
+      <ion-fab-list side="top">
+        <button ion-fab (click)="onClickHome()"><ion-icon name="locate"></ion-icon></button>
+        <button ion-fab (click)="onRefresh()"><ion-icon name="refresh"></ion-icon></button>
+      </ion-fab-list>
+    </ion-fab>
+    <div style="height: 100%;width:100%;" id="map"></div>
+
+  </div>
+  
+  <ion-item>
+    <h2>Locations</h2>
+  </ion-item>
+</ion-content>
+

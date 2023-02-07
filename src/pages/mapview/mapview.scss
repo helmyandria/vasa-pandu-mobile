@@ -1,0 +1,46 @@
+page-mapview {
+	#maplog{
+		z-index:999 !important;
+		position:absolute;
+		height:30px;
+		width:300px;
+	}
+	.css-icon {
+			  width: 0px;
+			  height: 0px;
+			  border-top: 0px solid transparent;
+			  border-bottom: 0px solid transparent;
+			  border-left: 0px solid #ff8888;
+			  
+			  }
+			popup-tip {
+			    background: white none repeat scroll 0 0;
+			    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
+			}  
+	
+	.btnStyle {
+		cursor:pointer;
+		background-color: #4D90FE; 
+		border-radius: 15px;
+		background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED); 
+		border: 1px solid #3079ED; 
+		color: #FFFFFF;
+		padding: 4px;
+		margin-top: 4px;
+		margin-bottom: 4px;
+		width:28%
+	}
+
+	.lblStyle {
+		color: red;
+		padding: 4px;
+		margin-top: 4px;
+		margin-bottom: 4px;
+		width: 100%;
+		font-weight: bold;
+	}
+	.buttonFab{
+		bottom:10%;
+		right:50px;
+	}
+}

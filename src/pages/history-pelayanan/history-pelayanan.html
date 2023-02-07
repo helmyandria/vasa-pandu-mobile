@@ -1,0 +1,60 @@
+<!--
+  Generated template for the HistoryPelayanan page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+        <img src="assets/img/pandulogo.png">
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="cpage">
+  <ion-card class="md-card-color cl-30">
+    <div class="hd-title">
+      <h1>History Pelayanan</h1>
+    </div>
+  </ion-card>
+  <ion-card class="md-card-color cl-70">
+    <ion-fab  right edge> 
+      <button ion-fab color="oranye" (click)="openDetail()">GO</button>
+    </ion-fab>
+    <ion-card-content padding>
+      <div>
+        <h2> Pilih Tanggal Mulai dan Akhir</h2>
+      </div>
+      <div>
+        <ion-list inset>
+          <ion-item>
+            <ion-label stacked>Tanggal Mulai</ion-label>
+            <ion-icon name="calendar" item-right></ion-icon>
+            <ion-datetime 
+              mode = "ios"
+              displayFormat="YYYY-MM-DD" 
+              pickerFormat="D MMMM YYYY" [(ngModel)]="tglAwal">
+            </ion-datetime>
+          </ion-item>
+
+          <ion-item>
+            <ion-label stacked>Tanggal Akhir</ion-label>
+            <ion-icon name="calendar" item-right></ion-icon>
+            <ion-datetime 
+               mode = "ios"
+              displayFormat="YYYY-MM-DD" 
+              pickerFormat="D MMMM YYYY" [(ngModel)]="tglAkhir"></ion-datetime>
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  
+
+
+</ion-content>

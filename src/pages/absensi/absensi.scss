@@ -1,0 +1,66 @@
+page-absensi {
+    ion-content{
+        background-color: #363e57 !important;
+    }
+    font-size: 15px;
+    
+    .avatar img{
+        margin: 0 auto;
+        display: block;
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        border: 4px solid #b8bbbb;
+    }
+    h2{
+        text-align:center;
+        text-transform:uppercase;
+        color:#646464;
+    }
+    .buttonFab{
+        top: 30px;
+        right: 45px;
+    }
+    .blue-bg{
+        margin-top:50px;
+        background-color:#363e57;
+        color:#ffffff !important;
+        text-align:center !important;
+        padding-bottom:15px;
+        h1{
+            font-size:3em;
+            margin:5px 0px 10px 0px;
+        }
+        h3{
+            margin:0px 0px 5px;
+        }
+        span{
+            display:block;
+            margin-top:5px;
+            font-size:1.1em;
+        }
+        .upper{
+            text-transform:uppercase;
+        }
+    }
+    .select-disabled, .item-select-disabled ion-label {
+        opacity: 1;
+       }
+    .ket1{
+        color: dodgerblue;
+    }
+    .ket2{
+        color: rgb(41, 211, 41);
+    }
+    .ket3{
+        color: rgb(255, 46, 46);
+    }
+    .ketShift{
+        font-size: 14px;
+    }
+    .blue-pandu{
+        background-color:#232838;
+        padding:15px 0px;
+    }
+
+}

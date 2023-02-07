@@ -1,0 +1,128 @@
+<!--
+  Generated template for the HistoryRealisasi page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>
+        <img src="assets/img/pandulogo.png">
+    </ion-title>
+  </ion-navbar>
+
+  <ion-toolbar color="primary" class="tb" *ngIf="detail">
+    <div text-center ><h4>HISTORY PELAYANAN</h4></div>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content class="cpage">
+  <ion-grid class="gr-white">
+    <ion-card class="gr-card">
+
+      <ion-card-content no-padding>
+        <ion-row>
+          <ion-col>
+            <ion-row>
+              <ion-col>
+                <h2><b>{{datas?.namaKapal}}</b></h2>
+                <small>{{datas?.namaAgen}}</small>
+              </ion-col>
+              <ion-col align="right">
+                  {{datas?.created | idformat}}
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col width-30>
+                <br> PPK1
+                <br> NO. SPK
+                <br *ngIf="datas?.asal"> ASAL
+                <br *ngIf="datas?.tujuan"> TUJUAN
+              </ion-col>
+              <ion-col width-70>
+                <br> {{datas?.noPpk1}}
+                <br> {{datas?.nomorSpk}}
+                <br *ngIf="datas?.asal != null"> {{datas?.asal}}
+                <br *ngIf="datas?.tujuan"> {{datas?.tujuan}}
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <div [innerHtml]="wizardStep"></div>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+
+    </ion-card>
+  </ion-grid>
+
+
+  <ion-grid class="gr-white">
+    
+
+    <ion-card class="gr-card" padding>
+      <h2><b>Pandu Status</b></h2>
+
+      <div id="pandu_status">
+        <ion-grid>
+          <ion-row>
+            <ion-col width-100>
+              <div class="valueTime" [innerHtml]="htmlText"></div>
+              
+              <div class="resultTime">
+                <ul [innerHtml]="timeDiff">
+                  
+                </ul>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+    </ion-card>
+  </ion-grid>
+
+  <ion-grid class="gr-white">
+    <ion-card class="gr-card" *ngIf="profile.namaPetugas" padding>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-row>
+
+            </ion-row>
+            Pandu Profile<br>
+            <ion-row align="center">
+              <ion-col align="center">
+                <ion-avatar>
+                  <div class="avatar">
+                    <img [src]=" profile.photo!=null ?  'data:image/PNG;base64,' + profile.photo : 'assets/img/person.png'">
+                  </div>
+                </ion-avatar>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col align="center">
+                {{profile.namaPetugas}}<br>
+                {{profile.nipPandu}}<br>
+                {{profile.hp}}<br>
+              </ion-col>
+            </ion-row>
+
+          </ion-col>
+          <ion-col>
+            <div class="sign">
+              <img [src]="datas.sign">
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-card>
+
+    
+  </ion-grid>
+  
+</ion-content>

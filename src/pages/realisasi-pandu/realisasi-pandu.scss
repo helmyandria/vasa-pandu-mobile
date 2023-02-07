@@ -1,0 +1,84 @@
+page-realisasi-pandu {
+   
+    ion-card{
+        background: white !important;
+    }
+ 
+     .notif-pemanduan{
+         float: right;
+     }
+     
+     img{
+         margin: 0 auto;
+         display: block;
+     }
+     .blue-bg{
+         background-color:#363e57;
+         color:#ffffff !important;
+         text-align:center !important;
+     }
+     .blue-pandu{
+         background-color:#232838;
+     }
+     .green-box{
+         background-color:#39b54a;
+         display:block;
+         padding: 45px 0px;
+                 img{
+                     margin: 0 auto;
+                     display: block;
+                     width:auto;
+                 }
+     }
+     .mint-green-box{
+         background-color:color($colors, oranye);
+         display:block;
+         padding: 45px 0px;
+                 img{
+                     margin: 0 auto;
+                     display: block;
+                     width:auto;
+                 }
+     }
+ 
+     .notif-pandu{
+         background-color:color($colors, blue-off);
+         display:block;
+         padding: 45px 0px;
+                 img{
+                     margin: 0 auto;
+                     display: block;
+                     width:auto;
+                 }
+     }
+ 
+     .notif-pandu-col{
+         background-color:#dcecde;
+     }
+ 
+     .notif-pandu-col-ds{
+         background-color:white;
+     }
+ 
+     .overlay{
+         position: absolute;
+         top: 35%;
+         color: red;
+         font-size: 2em;
+         width: 40%;
+         text-align: center;
+         left: 25%;
+     }
+     
+     .ndContent{
+         margin-top: 60px;
+     }
+     .scroll-content{
+         margin-bottom: 60px;
+     }
+     .buttonFab{
+         top: 135px;
+         right: 20px;
+     }
+ }
+ 

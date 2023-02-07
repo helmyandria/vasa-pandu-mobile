@@ -1,0 +1,44 @@
+// Styles for all of the user pages:
+// Login, Signup, Support
+
+page-user {
+  .logo {
+    padding: 20px 0;    
+    text-align: center;
+    //min-height: 200px;
+    margin-top:30%;
+    img {
+      max-width: 300px;
+    }
+  }
+
+  .list {
+    margin-bottom: 0;
+  }
+  ion-content{
+    // background: linear-gradient(to bottom, #d2fff3 0%, #9cb5c7 42%, #d2a6ef 61%, #d58bf9 89%, #f77be8 100%) !important;
+    // background:linear-gradient(135deg, rgba(1,154,196,1) 0%,rgba(165,201,86,1) 81%,rgba(229,229,94,1) 100%) !important;
+    //background: linear-gradient(135deg, rgba(207,231,250,1) 0%,rgba(99,147,193,1) 100%) !important;
+    //background: linear-gradient(165deg, #cfe7fa 0%, #6393c1 100%) !important
+    //background-image: url('../assets/img/body_bg.png');
+    background: color($colors, primary) ;
+  }
+  .content-md{
+    background: #191d2a;
+  }
+  .login-container{
+    width:450px;
+    margin:auto;
+    padding: 30px;
+    color: white !important;
+  }
+  form{
+    border:1px solid color($colors, primary);
+    border-radius: 3px;
+    padding: 10px;
+    background: white;
+  }
+  ion-label{
+    font-style: italic;
+  }
+}

@@ -1,0 +1,282 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.tabs-md .tab-button[aria-selected=true]{
+  color: #00bff3;
+}
+
+.tabs-md[tabsHighlight=true] .tab-highlight{
+  background: #00bff3;
+}
+
+.tabs-md .tab-button{
+    color:white;
+}
+.cpage{
+        
+        // background: linear-gradient(165deg, #cfe7fa 0%, #6393c1 100%) !important;
+        //background-image: url('../assets/img/body_bg.png');
+        background: linear-gradient(165deg, #ffffff 0%, #d0d0d0 100%) !important;
+    }
+
+#sidebar-app {
+  ion-card {
+    position: relative;
+    text-align: center;
+    height:250px;
+  }
+
+  .card-side{
+    margin : 0!important;
+    width: 100%;
+  }
+
+  .card-title {
+    position: absolute;
+    top: 36%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .card-subtitle {
+    font-size: 1.0em;
+    position: absolute;
+    top: 52%;
+    width: 100%;
+    color: #fff;
+  }
+}
+
+.ps_stat_left{
+    float: left;
+    width:80%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.ps_stat_right{
+    // float: left;
+    // width:70%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-right: 1px solid gray;
+}
+
+.ps_stat_right_manual{
+  // float: left;
+  // width:70%;
+  margin-left: 200px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.network_state_off{
+  position: absolute;
+  display: block;
+  height: 2rem;
+  width: 2rem;
+  top: 3rem;
+  right: 1em;
+  border: 1px solid red;
+  background-color: red;
+  border-radius: 1rem;
+}
+
+.network_state_on{
+  position: absolute;
+  display: block;
+  height: 2rem;
+  width: 2rem;
+  top: 3rem;
+  right: 1em;
+  border: 1px solid green;
+  background-color: green;
+  border-radius: 1rem;
+}
+
+.ccs{
+  // background: linear-gradient(135deg, rgb(251, 156, 241) 0%,rgb(148, 220, 192) 33%,rgb(239, 249, 203) 50%,rgb(139, 190, 234) 79%,rgb(234, 189, 62) 100%) !important;
+  // background:linear-gradient(to bottom, #60dbba 0%,#2a86cc 42%,#2483cc 61%,#d58bf9 89%,#f77be8 100%) !important;
+  background: linear-gradient(165deg, #cfe7fa 0%, #6393c1 100%) !important
+}
+
+
+.tp{
+  background-color: transparent !important;
+}
+
+ion-card{
+  background-color: transparent !important;
+  // background-image: url('../assets/img/body_bg.png') !important;
+  border-radius:10px !important;
+  color:#3f4248  !important;
+}
+
+ion-card ion-item{
+  background-color: transparent !important;
+  color:#3f4248  !important;
+}
+
+.strip_header{
+        border-bottom: 1px solid #748fa7;
+    }
+
+.toolbar-title {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }    
+
+  .gr-white{
+        width: 100%;
+        background: white;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .gr-card{
+        margin: 0 !important;
+        padding: 15px !important;
+        width: 100%;
+        background-color: white;
+        border-radius: 0 !important;
+    }
+
+  /*      Get Shit Done Color Pattern         */
+  $danger-color: #ff3b30;
+  $info-color: #2CA8FF;
+  $mercury: #b5b6b7;
+  $success-color: #05AE0E;
+  $white: #ffffff;
+
+.step-indicator {
+    border-collapse: separate;  
+    display: table;
+    margin-left: 0px;
+    position: relative;
+    table-layout: fixed;
+    vertical-align: middle;   
+    padding-left: 5px;
+    ol{
+        text-align: center;
+        padding-left:5px;
+    }
+    li {
+        display: table-cell;
+        float: none;
+        padding: 0;
+        width: 1%;
+        text-align: center;
+        &:before {
+            background-color: $mercury;
+            content: "";
+            display: block;
+            height: 1px;
+            position: relative;
+            top: 18px;      
+        }
+        &:first-child {
+          &:before {
+              left: 50%;
+          }
+        }
+        &:last-child {
+          &:before {
+              right: 50%;
+          }
+        }
+    }
+    .active {
+        .step {      
+          border-color: $info-color;
+          color: $info-color;
+        }
+        .caption {
+          color: $info-color;
+        }
+    }
+    .complete {
+        .step {     
+          border-color: $success-color;
+          color: $white;
+          background-color: $success-color;
+        }
+        .caption {
+          color: $success-color;
+        }
+    }
+    .incomplete {
+        .step {     
+          border-color: $danger-color;
+          color: $danger-color;
+        }
+        .caption {
+          color: $danger-color;
+        }
+    }  
+    .active.complete {
+        .step {      
+          border-color: $info-color;
+          color: $info-color;
+        }
+        .caption {
+          color: $info-color;
+        }
+    }
+    .inactive {
+        .caption {
+          color: $mercury;
+        }
+    }
+    .step {
+        background-color: $white;
+        border: 1px solid $mercury;
+        color: $mercury;
+        font-size: 18px;
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+        border-radius: 18px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+        box-shadow: 10px 10px 35px -10px rgb(81, 83, 84)
+    }
+    .caption {    
+        box-sizing: border-box;
+        color: $mercury;
+        padding: 11px 16px;
+    }  
+
+    .alertDanger{
+      background-color: white;
+      color: red;
+      button{
+          color: "orange";
+      }
+  }
+
+  
+
+  
+}
