@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController, LoadingController,Events } from 'ionic-angular';
-import { Storage } from '@ionic/storage'
+import { Storage } from '@ionic/storage-angular'
 import * as Leaflet from "leaflet";
 
 import { PemanduanPage } from '../pemanduan/pemanduan';
@@ -254,7 +254,7 @@ export class DetailSpkPage {
 
   runPendingState(){
     console.log("Calling DataPending");
-    this._sql.getRealisasiPending().then(data => {
+    this._sql.getRealisasiPending().then((data: any) => {
       console.log("DataPending",data);
       for(let i in data){
         console.log("DEBUG: Run Data Pending from detail", i);

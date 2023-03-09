@@ -1,7 +1,10 @@
 {
   "name": "vasapandu",
   "integrations": {
-    "cordova": {}
+    "cordova": {},
+    "capacitor": {
+      "enabled": false
+    }
   },
   "type": "ionic-angular",
   "hooks": {},

@@ -13,7 +13,7 @@ import {
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import "rxjs/Rx";
-import {Storage} from '@ionic/storage'
+import {Storage} from '@ionic/storage-angular'
 import {Badge} from '@ionic-native/badge';
 import {SQLite} from '@ionic-native/sqlite';
 import {Device} from '@ionic-native/device';
@@ -282,7 +282,7 @@ export class RealisasiPanduPage {
      */
     getMyOfflineData() {
         this.datas = [];
-        this._sql.getSpkOfflineData(this.tglMulai, this.tglSelesai).then(data => {
+        this._sql.getSpkOfflineData(this.tglMulai, this.tglSelesai).then((data: any) => {
             /**
              * push to datas object
              * variable datas pada directive realisasi-pandu.html
@@ -312,7 +312,7 @@ export class RealisasiPanduPage {
      */
     getOnlineData(): Promise<any> {
         console.log('load from online data');
-        return new Promise((resolve, reject) => {
+        return new Promise<void>((resolve, reject) => {
             this.spkData.loadRealisasi(this.tglMulai, this.tglSelesai).then(data => {
                     // this.datas = data;
                     this.loader.dismiss();
@@ -376,7 +376,7 @@ export class RealisasiPanduPage {
     }
 
     runPendingState() {
-        this._sql.getRealisasiPending().then(data => {
+        this._sql.getRealisasiPending().then((data: any) => {
             for (let i in data) {
                 console.log("DEBUG: Run data pending from realisasi", i);
                 let flow = JSON.parse(data[i].vjson);

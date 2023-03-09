@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.imaniprima.vasa" version="2.2.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.imaniprima.vasa.nocola" version="2.2.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Vasa Pandu</name>
     <description>Pandu Mobile</description>
     <author email="tantowi.jauhari@imaniprima.com" href="http://imaniprima.co.id/">Imani Prima Teams</author>
@@ -86,6 +86,7 @@
         <splash height="1125" src="resources/ios/splash/Default-Landscape-2436h.png" width="2436" />
         <splash height="2732" src="resources/ios/splash/Default@2x~universal~anyany.png" width="2732" />
         <preference name="UseSwiftLanguageVersion" value="5" />
+        <preference name="WKWebViewOnly" value="true" />
     </platform>
     <platform name="wp8">
         <icon height="99" src="resources/wp8/icon/ApplicationIcon.png" width="99" />
@@ -146,5 +147,5 @@
     <preference name="loadUrlTimeoutValue" value="700000" />
     <plugin name="cordova-plugin-local-notification" spec="~0.9.0-beta.2" />
     <engine name="android" spec="^10.1.1" />
-    <engine name="ios" spec="~4.5.5" />
+    <allow-navigation href="http://localhost:8100" sessionid="fce6108f" />
 </widget>

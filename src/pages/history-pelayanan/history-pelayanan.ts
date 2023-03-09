@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Events, NavController, LoadingController, AlertController, ToastController } from 'ionic-angular';
-import { Storage } from '@ionic/storage'
+import { Storage } from '@ionic/storage-angular'
 
 import * as moment from 'moment';
 

@@ -3,7 +3,7 @@ import { Geolocation, Geoposition } from '@ionic-native/geolocation';
 import { BackgroundGeolocation, BackgroundGeolocationConfig, BackgroundGeolocationResponse } from '@ionic-native/background-geolocation';
 import 'rxjs/add/operator/filter';
 
-import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
 
 import * as moment from 'moment';
 
@@ -38,7 +38,7 @@ export class LocationTracker {
       interval: 5000
     };
   this.backgroundGeolocation.configure(config)
-  .subscribe((location: BackgroundGeolocationResponse) => {
+  .then((location: BackgroundGeolocationResponse) => {
 
       //console.log('BackgroundGeolocation:  ' + location.latitude + ',' + location.longitude);
 

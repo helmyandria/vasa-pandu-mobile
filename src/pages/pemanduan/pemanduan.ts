@@ -7,7 +7,7 @@ import {
     ModalController,
     LoadingController
 } from 'ionic-angular';
-import {Storage} from '@ionic/storage';
+import {Storage} from '@ionic/storage-angular';
 import {RealisasiPanduPage} from '../realisasi-pandu/realisasi-pandu';
 
 
@@ -447,14 +447,14 @@ export class PemanduanPage {
         console.log('Hello PemanduanPage Page');
 
 
-        this.storage.ready().then(() => {
+        // this.storage.ready().then(() => {
             this.storage.get('profile').then((data) => {
                 this.profile = data;
                 console.log(this.profile);
             })
 
             this.firstLoad()
-        })
+        // })
     }
 
     ionViewDidLoad() {

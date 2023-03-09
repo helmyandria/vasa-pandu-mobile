@@ -8,7 +8,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { BackgroundMode } from '@ionic-native/background-mode';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { Badge } from '@ionic-native/badge';
-import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
 import { Deploy } from '@ionic/cloud-angular';
 
 import * as moment from 'moment';
@@ -171,7 +171,7 @@ export class PanduApp {
           console.log('error', e);
         })
 
-        this.localNotification.on('click', (notif) => {
+        this.localNotification.fireEvent('click', (notif) => {
           console.log("from notification local", notif);
           this.nav.push(RealisasiPanduPage);
           this.localNotification.clearAll();
@@ -397,7 +397,7 @@ export class PanduApp {
   }
 
   runPendingState() {
-    this._sql.getRealisasiPending().then(data => {
+    this._sql.getRealisasiPending().then((data: any) => {
       for (let i in data) {
         console.log("DEBUG: Run data pending from component");
         let flow = JSON.parse(data[i].vjson);

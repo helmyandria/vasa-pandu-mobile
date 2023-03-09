@@ -76,6 +76,9 @@
     },
     "cordova-sqlite-storage": {
       "PACKAGE_NAME": "com.imaniprima.vasa"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "com.imaniprima.vasa"
     }
   },
   "dependent_plugins": {

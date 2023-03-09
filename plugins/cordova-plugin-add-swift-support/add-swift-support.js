@@ -12752,7 +12752,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = function (context) {
   var projectRoot = context.opts.projectRoot;
-  var glob = context.requireCordovaModule('glob');
+  var glob = require('glob');
 
   // This script has to be executed depending on the command line arguments, not
   // on the hook execution cycle.
@@ -12892,7 +12892,7 @@ exports.default = function (context) {
 };
 
 var getConfigParser = function getConfigParser(context, configPath) {
-  var semver = context.requireCordovaModule('semver');
+  var semver = require('semver');
   var ConfigParser = void 0;
 
   if (semver.lt(context.opts.cordova.version, '5.4.0')) {
@@ -12905,7 +12905,7 @@ var getConfigParser = function getConfigParser(context, configPath) {
 };
 
 var getBridgingHeaderPath = function getBridgingHeaderPath(context, projectPath, iosPlatformVersion) {
-  var semver = context.requireCordovaModule('semver');
+  var semver = require('semver');
   var bridgingHeaderPath = void 0;
   if (semver.lt(iosPlatformVersion, '4.0.0')) {
     bridgingHeaderPath = _path2.default.posix.join(projectPath, 'Plugins', 'Bridging-Header.h');
@@ -12918,7 +12918,7 @@ var getBridgingHeaderPath = function getBridgingHeaderPath(context, projectPath,
 
 var getPlatformVersionsFromFileSystem = function getPlatformVersionsFromFileSystem(context, projectRoot) {
   var cordovaUtil = context.requireCordovaModule('cordova-lib/src/cordova/util');
-  var Q = context.requireCordovaModule('q');
+  var Q = require('q');
   var platformsOnFs = cordovaUtil.listPlatforms(projectRoot);
   var platformVersions = platformsOnFs.map(function (platform) {
     var script = _path2.default.join(projectRoot, 'platforms', platform, 'cordova', 'version');

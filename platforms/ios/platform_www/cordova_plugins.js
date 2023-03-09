@@ -99,6 +99,22 @@ module.exports = [
     "runs": true
   },
   {
+    "id": "cordova-plugin-ionic-webview.IonicWebView",
+    "file": "plugins/cordova-plugin-ionic-webview/src/www/util.js",
+    "pluginId": "cordova-plugin-ionic-webview",
+    "clobbers": [
+      "Ionic.WebView"
+    ]
+  },
+  {
+    "id": "cordova-plugin-ionic-webview.ios-wkwebview-exec",
+    "file": "plugins/cordova-plugin-ionic-webview/src/www/ios/ios-wkwebview-exec.js",
+    "pluginId": "cordova-plugin-ionic-webview",
+    "clobbers": [
+      "cordova.exec"
+    ]
+  },
+  {
     "id": "cordova-plugin-local-notification.LocalNotification",
     "file": "plugins/cordova-plugin-local-notification/www/local-notification.js",
     "pluginId": "cordova-plugin-local-notification",
@@ -224,6 +240,7 @@ module.exports.metadata =
   "cordova-plugin-geolocation": "2.4.3",
   "cordova-plugin-splashscreen": "4.1.0",
   "cordova-plugin-ionic": "2.0.4",
+  "cordova-plugin-ionic-webview": "5.0.0",
   "cordova-plugin-local-notification": "0.9.0-beta.2",
   "cordova-plugin-mauron85-background-geolocation": "2.3.6",
   "cordova-plugin-nativestorage": "2.3.2",

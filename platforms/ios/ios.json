@@ -49,6 +49,22 @@
               "count": 1
             },
             {
+              "xml": "<allow-navigation href=\"ionic://*\" />",
+              "count": 1
+            },
+            {
+              "xml": "<preference name=\"deployment-target\" value=\"11.0\" />",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"IonicWebView\"><param name=\"ios-package\" value=\"CDVWKWebViewEngine\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<preference name=\"CordovaWebViewEngine\" value=\"CDVWKWebViewEngine\" />",
+              "count": 1
+            },
+            {
               "xml": "<feature name=\"LocalNotification\"><param name=\"ios-package\" value=\"APPLocalNotification\" /></feature>",
               "count": 1
             },
@@ -109,7 +125,7 @@
               "count": 1
             },
             {
-              "xml": "<string>This app requires background location tracking</string>",
+              "xml": "<string>This app always requires location tracking</string>",
               "count": 1
             }
           ],
@@ -145,13 +161,13 @@
           ],
           "NSLocationAlwaysUsageDescription": [
             {
-              "xml": "<string>This app requires background location tracking</string>",
+              "xml": "<string>This app always requires location tracking</string>",
               "count": 1
             }
           ],
           "NSLocationAlwaysAndWhenInUseUsageDescription": [
             {
-              "xml": "<string>This app requires background location tracking</string>",
+              "xml": "<string>This app always requires location tracking</string>",
               "count": 1
             }
           ]
@@ -161,35 +177,35 @@
   },
   "installed_plugins": {
     "cordova-plugin-add-swift-support": {
-      "PACKAGE_NAME": "com.imaniprima.vasa"
+      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
     },
     "cordova-plugin-app-version": {
-      "PACKAGE_NAME": "com.imaniprima.vasa"
+      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
     },
     "cordova-plugin-device": {
-      "PACKAGE_NAME": "com.imaniprima.vasa"
+      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
     },
     "cordova-plugin-background-mode": {
-      "PACKAGE_NAME": "com.imaniprima.vasa"
+      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
     },
     "cordova-plugin-badge": {
-      "PACKAGE_NAME": "com.imaniprima.vasa"
+      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
     },
     "cordova-plugin-compat": {
-      "PACKAGE_NAME": "com.imaniprima.vasa"
+      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
     },
     "cordova-plugin-datepicker": {
-      "PACKAGE_NAME": "com.imaniprima.vasa"
+      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
     },
     "cordova-plugin-dialogs": {
-      "PACKAGE_NAME": "com.imaniprima.vasa"
+      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
     },
     "cordova-plugin-geolocation": {
       "GEOLOCATION_USAGE_DESCRIPTION": " ",
-      "PACKAGE_NAME": "com.imaniprima.vasa"
+      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
     },
     "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "com.imaniprima.vasa"
+      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
     },
     "cordova-plugin-ionic": {
       "APP_ID": "312eea82",
@@ -197,38 +213,41 @@
       "UPDATE_API": "https://api.ionicjs.com",
       "UPDATE_METHOD": "none",
       "MAX_STORE": "2",
-      "PACKAGE_NAME": "com.imaniprima.vasa"
+      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
     },
     "cordova-plugin-local-notification": {
-      "PACKAGE_NAME": "com.imaniprima.vasa"
+      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
     },
     "cordova-plugin-mauron85-background-geolocation": {
-      "ALWAYS_USAGE_DESCRIPTION": "This app requires background location tracking",
-      "PACKAGE_NAME": "com.imaniprima.vasa"
+      "ALWAYS_USAGE_DESCRIPTION": "This app always requires location tracking",
+      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
     },
     "cordova-plugin-nativestorage": {
-      "PACKAGE_NAME": "com.imaniprima.vasa"
+      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
     },
     "cordova-plugin-network-information": {
-      "PACKAGE_NAME": "com.imaniprima.vasa"
+      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
     },
     "cordova-plugin-statusbar": {
-      "PACKAGE_NAME": "com.imaniprima.vasa"
+      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
     },
     "cordova-plugin-vibration": {
-      "PACKAGE_NAME": "com.imaniprima.vasa"
+      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
     },
     "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.imaniprima.vasa"
+      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
     },
     "cordova-sqlite-storage": {
-      "PACKAGE_NAME": "com.imaniprima.vasa"
+      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
     },
     "ionic-plugin-keyboard": {
-      "PACKAGE_NAME": "com.imaniprima.vasa"
+      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
     },
     "uk.co.workingedge.cordova.plugin.sqliteporter": {
-      "PACKAGE_NAME": "com.imaniprima.vasa"
+      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
     }
   },
   "dependent_plugins": {},
@@ -330,6 +349,22 @@
         "IonicCordova"
       ],
       "runs": true
+    },
+    {
+      "id": "cordova-plugin-ionic-webview.IonicWebView",
+      "file": "plugins/cordova-plugin-ionic-webview/src/www/util.js",
+      "pluginId": "cordova-plugin-ionic-webview",
+      "clobbers": [
+        "Ionic.WebView"
+      ]
+    },
+    {
+      "id": "cordova-plugin-ionic-webview.ios-wkwebview-exec",
+      "file": "plugins/cordova-plugin-ionic-webview/src/www/ios/ios-wkwebview-exec.js",
+      "pluginId": "cordova-plugin-ionic-webview",
+      "clobbers": [
+        "cordova.exec"
+      ]
     },
     {
       "id": "cordova-plugin-local-notification.LocalNotification",
@@ -455,6 +490,7 @@
     "cordova-plugin-geolocation": "2.4.3",
     "cordova-plugin-splashscreen": "4.1.0",
     "cordova-plugin-ionic": "2.0.4",
+    "cordova-plugin-ionic-webview": "5.0.0",
     "cordova-plugin-local-notification": "0.9.0-beta.2",
     "cordova-plugin-mauron85-background-geolocation": "2.3.6",
     "cordova-plugin-nativestorage": "2.3.2",

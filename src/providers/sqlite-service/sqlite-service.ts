@@ -4,7 +4,7 @@ import {Http} from '@angular/http';
 import {Platform} from 'ionic-angular';
 import {SQLite, SQLiteObject} from '@ionic-native/sqlite';
 import {SQLitePorter} from '@ionic-native/sqlite-porter';
-import {Storage} from '@ionic/storage';
+import {Storage} from '@ionic/storage-angular';
 import {BehaviorSubject} from 'rxjs/Rx';
 import * as moment from 'moment';
 
@@ -44,36 +44,36 @@ export class SqliteServiceProvider {
                 this.sqlite = new SQLite();
                 this.sqlite.create({name: "spk.db", location: "default"}).then((db: SQLiteObject) => {
                     //spk table
-                    db.executeSql('CREATE TABLE IF NOT EXISTS spk (spk_id INTEGER PRIMARY KEY UNIQUE,username TEXT, vjson TEXT, status INTEGER, tgl_spk TEXT, timestamp TEXT)', {})
+                    db.executeSql('CREATE TABLE IF NOT EXISTS spk (spk_id INTEGER PRIMARY KEY UNIQUE,username TEXT, vjson TEXT, status INTEGER, tgl_spk TEXT, timestamp TEXT)', [])
                         .then(() => console.log('Executed SQL - spk table'))
                         .catch(e => console.log(e));
                     //detail spk table
-                    db.executeSql('CREATE TABLE IF NOT EXISTS detail_spk (detail_spk_id INTEGER PRIMARY KEY UNIQUE, vjson TEXT)', {})
+                    db.executeSql('CREATE TABLE IF NOT EXISTS detail_spk (detail_spk_id INTEGER PRIMARY KEY UNIQUE, vjson TEXT)', [])
                         .then(() => console.log('Executed SQL - detail table'))
                         .catch(e => console.log(e));
                     //detail spk table
-                    db.executeSql('CREATE TABLE IF NOT EXISTS history (history_id INTEGER PRIMARY KEY UNIQUE, vjson TEXT)', {})
+                    db.executeSql('CREATE TABLE IF NOT EXISTS history (history_id INTEGER PRIMARY KEY UNIQUE, vjson TEXT)', [])
                         .then(() => console.log('Executed SQL - detail table'))
                         .catch(e => console.log(e));
                     //msg queue
-                    db.executeSql('CREATE TABLE IF NOT EXISTS event (event_id INTEGER PRIMARY KEY UNIQUE, msg TEXT, state INTEGER)', {})
+                    db.executeSql('CREATE TABLE IF NOT EXISTS event (event_id INTEGER PRIMARY KEY UNIQUE, msg TEXT, state INTEGER)', [])
                         .then(() => console.log('Executed SQL - event table'))
                         .catch(e => console.log(e));
                     //VERSION
-                    db.executeSql('CREATE TABLE IF NOT EXISTS version (versi_id INTEGER PRIMARY KEY UNIQUE, versi TEXT, tgl_versi TEXT, status INTEGER)', {})
+                    db.executeSql('CREATE TABLE IF NOT EXISTS version (versi_id INTEGER PRIMARY KEY UNIQUE, versi TEXT, tgl_versi TEXT, status INTEGER)', [])
                         .then(() => console.log('Executed SQL - version table'))
                         .catch(e => console.log(e));
                     //REALISASI
-                    db.executeSql('CREATE TABLE IF NOT EXISTS realisasi (spk_id INTEGER PRIMARY KEY UNIQUE,username TEXT, vjson TEXT, status INTEGER, progress TEXT, tgl_spk TEXT, timestamp TEXT)', {})
+                    db.executeSql('CREATE TABLE IF NOT EXISTS realisasi (spk_id INTEGER PRIMARY KEY UNIQUE,username TEXT, vjson TEXT, status INTEGER, progress TEXT, tgl_spk TEXT, timestamp TEXT)', [])
                         .then(() => console.log('Executed SQL - realisasi table'))
                         .catch(e => console.log(e));
                     //REALISASI MQTT LOG
-                    db.executeSql('CREATE TABLE IF NOT EXISTS realisasi_mqtt_log (spk_id INTEGER PRIMARY KEY UNIQUE,username TEXT,vjson TEXT, msg_state TEXT, tgl_spk TEXT)', {});
+                    db.executeSql('CREATE TABLE IF NOT EXISTS realisasi_mqtt_log (spk_id INTEGER PRIMARY KEY UNIQUE,username TEXT,vjson TEXT, msg_state TEXT, tgl_spk TEXT)', []);
                     //adjusttime mqtt log table
-                    db.executeSql('CREATE TABLE IF NOT EXISTS adjusttime_mqtt_log (spk_id INTEGER PRIMARY KEY UNIQUE,username TEXT,vjson TEXT, msg_state TEXT, tgl_spk TEXT)', {});
+                    db.executeSql('CREATE TABLE IF NOT EXISTS adjusttime_mqtt_log (spk_id INTEGER PRIMARY KEY UNIQUE,username TEXT,vjson TEXT, msg_state TEXT, tgl_spk TEXT)', []);
 
                     //add column msg_state 
-                    db.executeSql('ALTER TABLE spk ADD COLUMN msg_state TEXT', {});
+                    db.executeSql('ALTER TABLE spk ADD COLUMN msg_state TEXT', []);
                 })
                     .catch(e => console.log("error create spk.db", e));
                 // }
@@ -323,7 +323,7 @@ export class SqliteServiceProvider {
      */
     public updateMessageStatus(spk_id, state): Promise<any> {
         if (this._platform.is('android') || this._platform.is('ios')) {
-            return new Promise((resolve, reject) => {
+            return new Promise<void>((resolve, reject) => {
                 this.sqlite.create({
                     name: 'spk.db',
                     location: 'default'
@@ -340,7 +340,7 @@ export class SqliteServiceProvider {
                     .catch(e => console.log(e));
             });
         } else {
-            return new Promise((resolve, reject) => {
+            return new Promise<void>((resolve, reject) => {
                 let query = "UPDATE spk set msg_state = '" + state + "', status=2 where spk_id = ?";
                 let arD = [spk_id];
                 // console.log(query);
@@ -829,7 +829,7 @@ export class SqliteServiceProvider {
      * @param DataArray
      */
     public saveSpkAndDetail(DataArray): Promise<any> {
-        return new Promise((resolve, reject) => {
+        return new Promise<void>((resolve, reject) => {
             let toSpk = [DataArray.detailFromList];
             let toDetail = DataArray.detailFromObject;
             // console.log("insert to spk", toSpk);

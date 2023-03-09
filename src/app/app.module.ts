@@ -7,12 +7,13 @@ import { Observable } from 'rxjs/Observable';
 
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
-import { SignaturePadModule } from 'angular2-signaturepad';
+// import { SignaturePadModule } from 'angular2-signaturepad';
 
 /**
  * Ionic native declaration
  */
-import { IonicStorageModule } from '@ionic/storage';
+// import { Drivers } from '@ionic/storage';
+import { IonicStorageModule } from '@ionic/storage-angular';
 import { BackgroundGeolocation } from '@ionic-native/background-geolocation';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
@@ -133,10 +134,11 @@ export class SanitizeHtml implements PipeTransform  {
     }),
     BrowserModule,
     HttpModule,
-    SignaturePadModule,
+    // SignaturePadModule,
     IonicStorageModule.forRoot({
      name: '__vasaPanduDb',
-     driverOrder: ['websql', 'sqlite']
+    //  driverOrder: [Drivers.IndexedDB, Drivers.LocalStorage]
+    //  driverOrder: ['websql', 'sqlite']
    }),
     CloudModule.forRoot(cloudSettings),
     NgxMaskModule,

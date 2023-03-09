@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams,LoadingController } from 'ionic-angular';
 
-import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
 
 import * as moment from 'moment';
 

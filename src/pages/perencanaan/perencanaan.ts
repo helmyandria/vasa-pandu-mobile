@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Events, NavController, LoadingController, AlertController, ToastController } from 'ionic-angular';
-import { Storage } from '@ionic/storage'
+import { Storage } from '@ionic/storage-angular'
 
 import { Pnetwork } from '../../providers/pnetwork';
 import { RencanaData } from '../../providers/rencana-data';

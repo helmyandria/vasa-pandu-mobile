@@ -198,6 +198,14 @@ module.exports = [
     "clobbers": [
       "SQLitePlugin"
     ]
+  },
+  {
+    "id": "cordova-plugin-ionic-webview.IonicWebView",
+    "file": "plugins/cordova-plugin-ionic-webview/src/www/util.js",
+    "pluginId": "cordova-plugin-ionic-webview",
+    "clobbers": [
+      "Ionic.WebView"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -223,7 +231,8 @@ module.exports.metadata =
   "cordova-plugin-dialogs": "2.0.2",
   "uk.co.workingedge.cordova.plugin.sqliteporter": "1.1.1",
   "cordova-plugin-local-notification": "0.9.0-beta.2",
-  "cordova-sqlite-storage": "5.0.0"
+  "cordova-sqlite-storage": "5.0.0",
+  "cordova-plugin-ionic-webview": "5.0.0"
 };
 // BOTTOM OF METADATA
 });

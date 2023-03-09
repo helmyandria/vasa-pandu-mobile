@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 
 import { AppConfig } from '../../config/app.config';
-import { Storage } from '@ionic/storage'
+import { Storage } from '@ionic/storage-angular'
 import { Device } from '@ionic-native/device'
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
@@ -61,7 +61,7 @@ export class SpkOfflineProvider {
    * 
    */
   getMyOfflineData(tglMulai, tglSelesai){
-    this._sql.getSpkOfflineData(tglMulai, tglSelesai).then(data=>{
+    this._sql.getSpkOfflineData(tglMulai, tglSelesai).then((data: any)=>{
       /**
        * push to datas object
        * variable datas pada directive realisasi-pandu.html 

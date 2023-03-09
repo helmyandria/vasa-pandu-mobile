@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController,ToastController, LoadingController, Events, Platform, App } from 'ionic-angular';
 import * as moment from "moment";
-import * as Leaflet from "leaflet";
+import L, * as Leaflet from "leaflet";
 import * as geoJson from 'geojson';
 import { Geolocation, BackgroundGeolocation, Dialogs } from 'ionic-native';
 import { LocationTracker } from '../../providers/location-tracker';
@@ -348,26 +348,26 @@ export class LeafletView {
       // }, 5000);
       
       this.layerShip.clearLayers();
-      this.layerShip = Leaflet.geoJSON(data, {
+      // this.layerShip = Leaflet.geoJSON(data, {
 
-        pointToLayer: function (feature, latlng) {
-          //console.log("Color ship",self.setColorShip(feature.properties['status']));
-          return new ArrowMarker(latlng, 
-                {
-                  icon: L.divIcon({
-                    className : "css-icon",
-                    iconSize: [50, 50],
-                    iconAnchor: [16, 37],
-                    popupAnchor: [0, -28],
-                    html:'<img src="assets/img/'+self.setColorShip(feature.properties['status'])+'" style="-webkit-transform: rotate(' + feature.properties['heading'] + 'deg); -moz-transform:rotate(' + feature.properties['heading'] + 'deg);" />'
-                  }), 
-                  iconAngle: feature.properties['heading']
-                });
+      //   pointToLayer: function (feature, latlng) {
+      //     //console.log("Color ship",self.setColorShip(feature.properties['status']));
+      //     return new ArrowMarker(latlng, 
+      //           {
+      //             icon: L.divIcon({
+      //               className : "css-icon",
+      //               iconSize: [50, 50],
+      //               iconAnchor: [16, 37],
+      //               popupAnchor: [0, -28],
+      //               html:'<img src="assets/img/'+self.setColorShip(feature.properties['status'])+'" style="-webkit-transform: rotate(' + feature.properties['heading'] + 'deg); -moz-transform:rotate(' + feature.properties['heading'] + 'deg);" />'
+      //             }), 
+      //             iconAngle: feature.properties['heading']
+      //           });
           
-        },
-        onEachFeature: this.onEachFeature
+      //   },
+      //   onEachFeature: this.onEachFeature
 
-      }).addTo(this._map);
+      // }).addTo(this._map);
     },err => {
       console.log('err', err)
     }).catch(err => {
