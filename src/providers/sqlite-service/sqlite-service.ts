@@ -4,7 +4,7 @@ import {Http} from '@angular/http';
 import {Platform} from 'ionic-angular';
 import {SQLite, SQLiteObject} from '@ionic-native/sqlite';
 import {SQLitePorter} from '@ionic-native/sqlite-porter';
-import {Storage} from '@ionic/storage-angular';
+import {Storage} from '@ionic/storage';
 import {BehaviorSubject} from 'rxjs/Rx';
 import * as moment from 'moment';
 
@@ -23,8 +23,8 @@ export class SqliteServiceProvider {
     ) {
         console.log('Hello Database Provider');
 
-        this._platform.ready().then(() => {
-            if (this._platform.is('android') || this._platform.is('ios')) {
+        this._platform.ready().then(() => {            
+            if (this._platform.is('android') || this._platform.is('ios') || this._platform.is('cordova')) {
 
                 this.sqlite.create({
                     name: 'spk.db',
@@ -133,7 +133,7 @@ export class SqliteServiceProvider {
      * @param DataArray : Object
      */
     public saveSpkToSqlite(DataArray) {
-        if (this._platform.is('android') || this._platform.is('ios')) {
+        if (this._platform.is('android') || this._platform.is('ios') || this._platform.is('cordova')) {
             return new Promise((resolve, reject) => {
                 // using sqlite
                 this.sqlite.create({
@@ -206,7 +206,7 @@ export class SqliteServiceProvider {
     }
 
     public getSpkOfflineData(tglMulai, tanggalAkhir) {
-        if (this._platform.is('android') || this._platform.is('ios')) {
+        if (this._platform.is('android') || this._platform.is('ios') || this._platform.is('cordova')) {
             return new Promise((resolve, reject) => {
                 let query = "SELECT * FROM spk where datetime(tgl_spk) >= datetime('" + tglMulai + " 00:00:00') and datetime(tgl_spk) <= datetime('" + tanggalAkhir + " 23:59:59') and username='" + localStorage.getItem('username') + "' order by spk_id desc";
                 let arr = [];
@@ -280,7 +280,7 @@ export class SqliteServiceProvider {
      * @param spk_id
      */
     public updateSpkStatus(spk_id, state) {
-        if (this._platform.is('android') || this._platform.is('ios')) {
+        if (this._platform.is('android') || this._platform.is('ios') || this._platform.is('cordova')) {
             return new Promise((resolve, reject) => {
                 this.sqlite.create({
                     name: 'spk.db',
@@ -322,7 +322,7 @@ export class SqliteServiceProvider {
      * @param state
      */
     public updateMessageStatus(spk_id, state): Promise<any> {
-        if (this._platform.is('android') || this._platform.is('ios')) {
+        if (this._platform.is('android') || this._platform.is('ios') || this._platform.is('cordova')) {
             return new Promise<void>((resolve, reject) => {
                 this.sqlite.create({
                     name: 'spk.db',
@@ -364,7 +364,7 @@ export class SqliteServiceProvider {
      * @param detail_spk_id
      */
     public saveDetailSpkToSqlite(DataArrayTwo, detail_spk_id) {
-        if (this._platform.is('android') || this._platform.is('ios')) {
+        if (this._platform.is('android') || this._platform.is('ios') || this._platform.is('cordova')) {
             this.sqlite.create({
                 name: 'spk.db',
                 location: 'default'
@@ -394,7 +394,7 @@ export class SqliteServiceProvider {
     }
 
     public getDetailSpkOfflineData(detailSpkId) {
-        if (this._platform.is('android') || this._platform.is('ios')) {
+        if (this._platform.is('android') || this._platform.is('ios') || this._platform.is('cordova')) {
             return new Promise((resolve, reject) => {
                 this.sqlite.create({
                     name: 'spk.db',
@@ -459,7 +459,7 @@ export class SqliteServiceProvider {
      * @param history_id
      */
     public saveDetailHistoryToSqlite(DataArrayTwo, history_id) {
-        if (this._platform.is('android') || this._platform.is('ios')) {
+        if (this._platform.is('android') || this._platform.is('ios') || this._platform.is('cordova')) {
             this.sqlite.create({
                 name: 'spk.db',
                 location: 'default'
@@ -494,7 +494,7 @@ export class SqliteServiceProvider {
      * @param historyId
      */
     public getDetailHistoryOfflineData(historyId) {
-        if (this._platform.is('android') || this._platform.is('ios')) {
+        if (this._platform.is('android') || this._platform.is('ios') || this._platform.is('cordova')) {
             return new Promise((resolve, reject) => {
                 this.sqlite.create({
                     name: 'spk.db',
@@ -543,7 +543,7 @@ export class SqliteServiceProvider {
      * @param DataArray
      */
     public saveVersiToSqlite(DataArray) {
-        if (this._platform.is('android') || this._platform.is('ios')) {
+        if (this._platform.is('android') || this._platform.is('ios') || this._platform.is('cordova')) {
             return new Promise((resolve, reject) => {
                 // using sqlite
                 this.sqlite.create({
@@ -591,7 +591,7 @@ export class SqliteServiceProvider {
 
 
     public saveRealisasiToSqlite(DataArray) {
-        if (this._platform.is('android') || this._platform.is('ios')) {
+        if (this._platform.is('android') || this._platform.is('ios') || this._platform.is('cordova')) {
             return new Promise((resolve, reject) => {
                 // using sqlite
                 this.sqlite.create({
@@ -639,7 +639,7 @@ export class SqliteServiceProvider {
     }
 
     public getRealisasiOffline(spk_id) {
-        if (this._platform.is('android') || this._platform.is('ios')) {
+        if (this._platform.is('android') || this._platform.is('ios') || this._platform.is('cordova')) {
             return new Promise((resolve, reject) => {
                 this.sqlite.create({
                     name: 'spk.db',
@@ -682,7 +682,7 @@ export class SqliteServiceProvider {
     }
 
     public updateProgressRealisasi(spk_id, dataProgress) {
-        if (this._platform.is('android') || this._platform.is('ios')) {
+        if (this._platform.is('android') || this._platform.is('ios') || this._platform.is('cordova')) {
             return new Promise((resolve, reject) => {
                 this.sqlite.create({
                     name: 'spk.db',
@@ -726,7 +726,7 @@ export class SqliteServiceProvider {
      *  C = Created
      */
     public saveRealisasiMqttLog(DataArray, state) {
-        if (this._platform.is('android') || this._platform.is('ios')) {
+        if (this._platform.is('android') || this._platform.is('ios') || this._platform.is('cordova')) {
             return new Promise((resolve, reject) => {
                 // using sqlite
                 this.sqlite.create({
@@ -775,7 +775,7 @@ export class SqliteServiceProvider {
      * @param DataArray : Object
      */
     public saveAddjusttimeMqttLog(DataArray) {
-        if (this._platform.is('android') || this._platform.is('ios')) {
+        if (this._platform.is('android') || this._platform.is('ios') || this._platform.is('cordova')) {
             return new Promise((resolve, reject) => {
                 // using sqlite
                 this.sqlite.create({
@@ -841,7 +841,7 @@ export class SqliteServiceProvider {
     }
 
     public getRealisasiPending() {
-        if (this._platform.is('android') || this._platform.is('ios')) {
+        if (this._platform.is('android') || this._platform.is('ios') || this._platform.is('cordova')) {
             return new Promise((resolve, reject) => {
                 let query = 'select a.* from realisasi a, realisasi_mqtt_log b where a.spk_id = b.spk_id and b.msg_state = "P"';
                 let arr = [];
@@ -892,7 +892,7 @@ export class SqliteServiceProvider {
     }
 
     public getRealisasiMqttLogOffline(spk_id) {
-        if (this._platform.is('android') || this._platform.is('ios')) {
+        if (this._platform.is('android') || this._platform.is('ios') || this._platform.is('cordova')) {
             return new Promise((resolve, reject) => {
                 this.sqlite.create({
                     name: 'spk.db',
@@ -937,7 +937,7 @@ export class SqliteServiceProvider {
     }
 
     public updateRealisasiLog(spk_id) {
-        if (this._platform.is('android') || this._platform.is('ios')) {
+        if (this._platform.is('android') || this._platform.is('ios') || this._platform.is('cordova')) {
             return new Promise((resolve, reject) => {
                 this.sqlite.create({
                     name: 'spk.db',
@@ -969,7 +969,7 @@ export class SqliteServiceProvider {
 
     public getLog(query, action) {
         let arr = [];
-        if (this._platform.is('android') || this._platform.is('ios')) {
+        if (this._platform.is('android') || this._platform.is('ios') || this._platform.is('cordova')) {
             return new Promise((resolve, reject) => {
                 this.sqlite.create({
                     name: 'spk.db',
@@ -1025,7 +1025,7 @@ export class SqliteServiceProvider {
     }
 
     public getDermagaOffline(namaDermanga, kodeCabang) {
-        if (this._platform.is('android') || this._platform.is('ios')) {
+        if (this._platform.is('android') || this._platform.is('ios') || this._platform.is('cordova')) {
             return new Promise((resolve, reject) => {
                 this.sqlite.create({
                     name: 'spk.db',
@@ -1081,7 +1081,7 @@ export class SqliteServiceProvider {
     }
 
     deleteSpk(spk_id) {
-        if (this._platform.is('android') || this._platform.is('ios')) {
+        if (this._platform.is('android') || this._platform.is('ios') || this._platform.is('cordova')) {
             return new Promise((resolve, reject) => {
                 this.sqlite.create({
                     name: 'spk.db',

@@ -7,7 +7,7 @@ import {
     ModalController,
     LoadingController
 } from 'ionic-angular';
-import {Storage} from '@ionic/storage-angular';
+import {Storage} from '@ionic/storage';
 import {RealisasiPanduPage} from '../realisasi-pandu/realisasi-pandu';
 
 

@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 
 import {Events, AlertController} from 'ionic-angular';
-import {Storage} from '@ionic/storage-angular';
+import {Storage} from '@ionic/storage';
 import {Http, Headers, RequestOptions} from '@angular/http';
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';

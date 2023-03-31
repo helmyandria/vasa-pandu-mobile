@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController,ViewController, NavParams, AlertController } from 'ionic-angular';
 
-import { Storage } from '@ionic/storage-angular';
+import { Storage } from '@ionic/storage';
 
 import { SpkData } from '../../providers/spk-data';
 

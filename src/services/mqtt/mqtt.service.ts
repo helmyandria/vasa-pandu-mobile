@@ -17,7 +17,7 @@ import {Vibration} from '@ionic-native/vibration';
 import {Badge} from '@ionic-native/badge';
 import {Dialogs} from '@ionic-native/dialogs';
 
-import {Storage} from '@ionic/storage-angular';
+import {Storage} from '@ionic/storage';
 
 import {AlertTolakSpkComponent} from '../../components/alert-tolak-spk/alert-tolak-spk';
 

@@ -7,7 +7,7 @@ import { Vibration } from '@ionic-native/vibration';
 import { Badge } from '@ionic-native/badge';
 import { Network } from '@ionic-native/network';
 
-import { Storage } from '@ionic/storage-angular';
+import { Storage } from '@ionic/storage';
 import { Http } from '@angular/http';
 
 import * as moment from 'moment';
