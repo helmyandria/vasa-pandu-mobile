@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController,ViewController, NavParams, AlertController, ModalController } from 'ionic-angular';
 
-import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
 
 import * as moment from 'moment';
 
@@ -47,6 +47,7 @@ export class AlertTolakSpkComponent {
     this.tujuan = this.data.namaLokasiPanduTujuan;
     this.tanggal = moment(this.data.jamPenetapanPandu).format('DD/MM/YYYY HH:mm');
     // this.storage.ready().then(() => {
+      this.storage.create();
       this.storage.get('profile').then((data)=>{
         this.profile = data;
         console.log("profile. ", this.profile);

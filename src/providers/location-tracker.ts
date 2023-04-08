@@ -3,7 +3,7 @@ import { Geolocation, Geoposition } from '@ionic-native/geolocation';
 import { BackgroundGeolocation, BackgroundGeolocationConfig, BackgroundGeolocationResponse } from '@ionic-native/background-geolocation';
 import 'rxjs/add/operator/filter';
 
-import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
 
 import * as moment from 'moment';
 

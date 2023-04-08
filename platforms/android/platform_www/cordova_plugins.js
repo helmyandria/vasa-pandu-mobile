@@ -82,23 +82,6 @@ module.exports = [
     ]
   },
   {
-    "id": "cordova-plugin-statusbar.statusbar",
-    "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
-    "pluginId": "cordova-plugin-statusbar",
-    "clobbers": [
-      "window.StatusBar"
-    ]
-  },
-  {
-    "id": "ionic-plugin-keyboard.keyboard",
-    "file": "plugins/ionic-plugin-keyboard/www/android/keyboard.js",
-    "pluginId": "ionic-plugin-keyboard",
-    "clobbers": [
-      "cordova.plugins.Keyboard"
-    ],
-    "runs": true
-  },
-  {
     "id": "cordova-plugin-app-version.AppVersionPlugin",
     "file": "plugins/cordova-plugin-app-version/www/AppVersionPlugin.js",
     "pluginId": "cordova-plugin-app-version",
@@ -131,15 +114,6 @@ module.exports = [
     "id": "cordova-plugin-nativestorage.NativeStorageError",
     "file": "plugins/cordova-plugin-nativestorage/www/NativeStorageError.js",
     "pluginId": "cordova-plugin-nativestorage"
-  },
-  {
-    "id": "cordova-plugin-ionic.common",
-    "file": "plugins/cordova-plugin-ionic/www/common.js",
-    "pluginId": "cordova-plugin-ionic",
-    "clobbers": [
-      "IonicCordova"
-    ],
-    "runs": true
   },
   {
     "id": "cordova-plugin-dialogs.notification",
@@ -192,19 +166,19 @@ module.exports = [
     ]
   },
   {
+    "id": "cordova-plugin-statusbar.statusbar",
+    "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+    "pluginId": "cordova-plugin-statusbar",
+    "clobbers": [
+      "window.StatusBar"
+    ]
+  },
+  {
     "id": "cordova-sqlite-storage.SQLitePlugin",
     "file": "plugins/cordova-sqlite-storage/www/SQLitePlugin.js",
     "pluginId": "cordova-sqlite-storage",
     "clobbers": [
       "SQLitePlugin"
-    ]
-  },
-  {
-    "id": "cordova-plugin-ionic-webview.IonicWebView",
-    "file": "plugins/cordova-plugin-ionic-webview/src/www/util.js",
-    "pluginId": "cordova-plugin-ionic-webview",
-    "clobbers": [
-      "Ionic.WebView"
     ]
   }
 ];
@@ -220,19 +194,17 @@ module.exports.metadata =
   "cordova-plugin-vibration": "2.1.6",
   "cordova-plugin-console": "1.1.0",
   "cordova-plugin-splashscreen": "4.1.0",
-  "cordova-plugin-statusbar": "2.4.3",
-  "cordova-plugin-whitelist": "1.3.4",
-  "ionic-plugin-keyboard": "2.2.1",
   "cordova-plugin-app-version": "0.1.9",
   "cordova-plugin-datepicker": "0.9.3",
   "cordova-plugin-nativestorage": "2.3.2",
-  "cordova-plugin-add-swift-support": "1.7.2",
-  "cordova-plugin-ionic": "2.0.4",
   "cordova-plugin-dialogs": "2.0.2",
   "uk.co.workingedge.cordova.plugin.sqliteporter": "1.1.1",
   "cordova-plugin-local-notification": "0.9.0-beta.2",
-  "cordova-sqlite-storage": "5.0.0",
-  "cordova-plugin-ionic-webview": "5.0.0"
+  "cordova-plugin-statusbar": "3.0.0",
+  "cordova-sqlite-storage": "5.1.0",
+  "cordova-plugin-wkwebview-engine": "1.2.2",
+  "cordova-plugin-wkwebview-file-xhr": "3.1.0",
+  "cordova-plugin-wkwebviewxhrfix": "0.1.0"
 };
 // BOTTOM OF METADATA
 });

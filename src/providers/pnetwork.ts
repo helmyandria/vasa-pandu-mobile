@@ -4,7 +4,7 @@ import {Events} from 'ionic-angular';
 import 'rxjs/add/operator/map';
 
 import {Network} from '@ionic-native/network';
-import {Storage} from '@ionic/storage';
+import {Storage} from '@ionic/storage-angular';
 import {SqliteServiceProvider} from "../providers/sqlite-service/sqlite-service";
 
 /*

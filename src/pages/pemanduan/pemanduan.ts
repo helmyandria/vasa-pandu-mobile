@@ -7,7 +7,7 @@ import {
     ModalController,
     LoadingController
 } from 'ionic-angular';
-import {Storage} from '@ionic/storage';
+import {Storage} from '@ionic/storage-angular';
 import {RealisasiPanduPage} from '../realisasi-pandu/realisasi-pandu';
 
 
@@ -448,6 +448,7 @@ export class PemanduanPage {
 
 
         // this.storage.ready().then(() => {
+            this.storage.create();
             this.storage.get('profile').then((data) => {
                 this.profile = data;
                 console.log(this.profile);

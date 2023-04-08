@@ -12,8 +12,8 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 /**
  * Ionic native declaration
  */
-// import { Drivers } from '@ionic/storage';
-import { IonicStorageModule } from '@ionic/storage';
+import { IonicStorageModule, Storage } from '@ionic/storage-angular';
+import { Drivers } from '@ionic/storage';
 import { BackgroundGeolocation } from '@ionic-native/background-geolocation';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
@@ -137,8 +137,8 @@ export class SanitizeHtml implements PipeTransform  {
     // SignaturePadModule,
     IonicStorageModule.forRoot({
      name: '__vasaPanduDb',
-    //  driverOrder: [Drivers.IndexedDB, Drivers.LocalStorage]
-     driverOrder: ['websql', 'sqlite']
+     driverOrder: [Drivers.IndexedDB, Drivers.LocalStorage]
+    //  driverOrder: ['websql', 'sqlite', 'localstorage']
    }),
     CloudModule.forRoot(cloudSettings),
     NgxMaskModule,
@@ -166,7 +166,7 @@ export class SanitizeHtml implements PipeTransform  {
     UserData,
     LocationTracker,
     Notification,
-    // Storage,
+    Storage,
     Pnetwork,
     //Config,
     Geojson,

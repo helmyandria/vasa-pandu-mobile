@@ -8,79 +8,68 @@
   },
   "installed_plugins": {
     "cordova-plugin-app-version": {
-      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
     },
     "cordova-plugin-background-mode": {
-      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
     },
     "cordova-plugin-badge": {
-      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
     },
     "cordova-plugin-datepicker": {
-      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
     },
     "cordova-plugin-dialogs": {
-      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
     },
     "cordova-plugin-geolocation": {
       "GEOLOCATION_USAGE_DESCRIPTION": " ",
-      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
-    },
-    "cordova-plugin-ionic": {
-      "APP_ID": "312eea82",
-      "CHANNEL_NAME": "Master",
-      "UPDATE_API": "https://api.ionicjs.com",
-      "UPDATE_METHOD": "none",
-      "MAX_STORE": "2",
-      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
-    },
-    "cordova-plugin-ionic-webview": {
-      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
     },
     "cordova-plugin-local-notification": {
-      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
     },
     "cordova-plugin-mauron85-background-geolocation": {
       "ALWAYS_USAGE_DESCRIPTION": "This app always requires location tracking",
-      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
     },
     "cordova-plugin-nativestorage": {
-      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
     },
     "cordova-plugin-network-information": {
-      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
     },
     "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
     },
     "cordova-plugin-statusbar": {
-      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
     },
     "cordova-plugin-vibration": {
-      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
-    },
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
     },
     "cordova-sqlite-storage": {
-      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
-    },
-    "ionic-plugin-keyboard": {
-      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
     },
     "uk.co.workingedge.cordova.plugin.sqliteporter": {
-      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+    },
+    "cordova-plugin-wkwebview-engine": {
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+    },
+    "cordova-plugin-wkwebview-file-xhr": {
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+    },
+    "cordova-plugin-wkwebviewxhrfix": {
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
     }
   },
   "dependent_plugins": {
-    "cordova-plugin-add-swift-support": {
-      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
-    },
     "cordova-plugin-device": {
-      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
     },
     "cordova-plugin-compat": {
-      "PACKAGE_NAME": "com.imaniprima.vasa.nocola"
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
     }
   }
 }

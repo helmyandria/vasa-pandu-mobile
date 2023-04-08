@@ -8,7 +8,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { BackgroundMode } from '@ionic-native/background-mode';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { Badge } from '@ionic-native/badge';
-import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
 import { Deploy } from '@ionic/cloud-angular';
 
 import * as moment from 'moment';
@@ -107,6 +107,7 @@ export class PanduApp {
     private _spk: SpkData,
     private _sql: SqliteServiceProvider
   ) {
+    this.storage.create();
     this.initializeApp();
 
     this.events.subscribe('notif:state', (notif) => {
@@ -139,6 +140,7 @@ export class PanduApp {
   initializeApp() {
     this.platform.ready().then(() => {
       console.log("device ready..")
+            
       /**
        * load global app config
        */

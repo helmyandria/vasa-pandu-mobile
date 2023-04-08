@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AlertController, NavController } from 'ionic-angular';
 
-import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
 
 import { LoginPage } from '../login/login';
 import { UserData } from '../../providers/user-data';

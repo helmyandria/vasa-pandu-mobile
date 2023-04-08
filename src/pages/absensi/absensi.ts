@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, ModalController, LoadingController, AlertController } from 'ionic-angular';
-import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
 import * as moment from 'moment';
 import 'moment/src/locale/id';
 

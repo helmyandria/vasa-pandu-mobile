@@ -41,20 +41,6 @@
     <feature name="Geolocation">
         <param name="ios-package" value="CDVLocation" />
     </feature>
-    <feature name="SplashScreen">
-        <param name="ios-package" value="CDVSplashScreen" />
-        <param name="onload" value="true" />
-    </feature>
-    <feature name="IonicDeploy">
-        <param name="ios-package" onload="true" value="IonicDeploy" />
-    </feature>
-    <feature name="IonicCordovaCommon">
-        <param name="ios-package" onload="true" value="IonicCordovaCommon" />
-    </feature>
-    <allow-navigation href="ionic://*" />
-    <feature name="IonicWebView">
-        <param name="ios-package" value="CDVWKWebViewEngine" />
-    </feature>
     <feature name="LocalNotification">
         <param name="ios-package" value="APPLocalNotification" />
     </feature>
@@ -68,6 +54,10 @@
     <feature name="NetworkStatus">
         <param name="ios-package" value="CDVConnection" />
     </feature>
+    <feature name="SplashScreen">
+        <param name="ios-package" value="CDVSplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
     <feature name="StatusBar">
         <param name="ios-package" value="CDVStatusBar" />
         <param name="onload" value="true" />
@@ -78,8 +68,16 @@
     <feature name="SQLitePlugin">
         <param name="ios-package" value="SQLitePlugin" />
     </feature>
-    <feature name="Keyboard">
-        <param name="ios-package" onload="true" value="IonicKeyboard" />
+    <feature name="CDVWKWebViewEngine">
+        <param name="ios-package" value="CDVWKWebViewEngine" />
+    </feature>
+    <feature name="CDVWKWebViewFileXhr">
+        <param name="ios-package" value="CDVWKWebViewFileXhr" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="WKWebViewXHRFix">
+        <param name="ios-package" value="WKWebViewXHRFix" />
+        <param name="onload" value="true" />
     </feature>
     <name>Vasa Pandu</name>
     <description>Pandu Mobile</description>
@@ -163,8 +161,6 @@
     <preference name="PageLength" value="0" />
     <preference name="PaginationBreakingMode" value="page" />
     <preference name="PaginationMode" value="unpaginated" />
-    <preference name="deployment-target" value="11.0" />
-    <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
     <preference name="StatusBarOverlaysWebView" value="true" />
     <preference name="StatusBarStyle" value="lightcontent" />
     <preference name="webviewbounce" value="false" />
@@ -181,4 +177,5 @@
     <preference name="loadUrlTimeoutValue" value="700000" />
     <preference name="UseSwiftLanguageVersion" value="5" />
     <preference name="WKWebViewOnly" value="true" />
+    <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
 </widget>

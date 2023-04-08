@@ -3,7 +3,7 @@ import {Http, Headers, RequestOptions} from '@angular/http';
 import {Platform} from 'ionic-angular';
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
-import {Storage} from '@ionic/storage'
+import {Storage} from '@ionic/storage-angular'
 
 import {Spk} from '../models/spk';
 

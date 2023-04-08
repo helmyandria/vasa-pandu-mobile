@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.imaniprima.vasa" version="2.2.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.imaniprima.vasa.nocola" version="2.2.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <feature name="Device">
         <param name="android-package" value="org.apache.cordova.device.Device" />
     </feature>
@@ -25,18 +25,6 @@
         <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
         <param name="onload" value="true" />
     </feature>
-    <feature name="StatusBar">
-        <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
-        <param name="onload" value="true" />
-    </feature>
-    <feature name="Whitelist">
-        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
-        <param name="onload" value="true" />
-    </feature>
-    <feature name="Keyboard">
-        <param name="android-package" value="io.ionic.keyboard.IonicKeyboard" />
-        <param name="onload" value="true" />
-    </feature>
     <feature name="AppVersion">
         <param name="android-package" value="uk.co.whiteoctober.cordova.AppVersion" />
     </feature>
@@ -52,18 +40,15 @@
     <feature name="LocalNotification">
         <param name="android-package" value="de.appplant.cordova.plugin.localnotification.LocalNotification" />
     </feature>
+    <feature name="StatusBar">
+        <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
+        <param name="onload" value="true" />
+    </feature>
     <feature name="SQLitePlugin">
         <param name="android-package" value="io.sqlc.SQLitePlugin" />
     </feature>
     <feature name="Badge">
         <param name="android-package" value="de.appplant.cordova.plugin.badge.Badge" />
-    </feature>
-    <feature name="IonicCordovaCommon">
-        <param name="android-package" onload="true" value="com.ionicframework.common.IonicCordovaCommon" />
-    </feature>
-    <feature name="IonicDeploy">
-        <param name="android-package" value="com.ionicframework.deploy.IonicDeploy" />
-        <param name="onload" value="true" />
     </feature>
     <name>Vasa Pandu</name>
     <description>Pandu Mobile</description>
@@ -81,6 +66,7 @@
     <allow-navigation href="http://192.168.43.248:8100" />
     <allow-navigation href="http://192.168.1.31:8100" />
     <allow-navigation href="http://192.168.2.5:8100" />
+    <allow-navigation href="http://localhost:8100" sessionid="fce6108f" />
     <allow-intent href="market:*" />
     <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
     <icon density="mdpi" src="resources/android/icon/drawable-mdpi-icon.png" />
@@ -101,6 +87,7 @@
     <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
     <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
     <preference name="loglevel" value="DEBUG" />
+    <preference name="StatusBarOverlaysWebView" value="true" />
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
@@ -115,11 +102,5 @@
     <preference name="AutoHideSplashScreen" value="false" />
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="loadUrlTimeoutValue" value="700000" />
-    <allow-navigation href="http://localhost/*" />
-    <allow-navigation href="https://localhost/*" />
-    <allow-navigation href="ionic://*" />
-    <preference name="webView" value="com.ionicframework.cordova.webview.IonicWebViewEngine" />
-    <feature name="IonicWebView">
-        <param name="android-package" value="com.ionicframework.cordova.webview.IonicWebView" />
-    </feature>
+    <preference name="AndroidXEnabled" value="true" />
 </widget>

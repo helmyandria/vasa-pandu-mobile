@@ -13,7 +13,7 @@ import {
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import "rxjs/Rx";
-import {Storage} from '@ionic/storage'
+import {Storage} from '@ionic/storage-angular'
 import {Badge} from '@ionic-native/badge';
 import {SQLite} from '@ionic-native/sqlite';
 import {Device} from '@ionic-native/device';

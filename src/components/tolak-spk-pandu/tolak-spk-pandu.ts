@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController,ViewController, NavParams, AlertController } from 'ionic-angular';
 
-import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
 
 import { SpkData } from '../../providers/spk-data';
 
@@ -31,6 +31,7 @@ export class TolakSpkPanduComponent {
   ) {
     this.data = params.get('toDetail'); 
     // this.storage.ready().then(() => {
+      this.storage.create();
       this.storage.get('profile').then((data)=>{
         this.profile = data;
         console.log("profile. ", this.profile);

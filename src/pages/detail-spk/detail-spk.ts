@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController, LoadingController,Events } from 'ionic-angular';
-import { Storage } from '@ionic/storage'
+import { Storage } from '@ionic/storage-angular'
 import * as Leaflet from "leaflet";
 
 import { PemanduanPage } from '../pemanduan/pemanduan';
