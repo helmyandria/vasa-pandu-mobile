@@ -15,44 +15,42 @@ export class LocationTracker {
   public watch: any;
   public lat: number = 0;
   public lng: number = 0;
-  public intMulaiPandu:any;
+  public intMulaiPandu: any;
 
   constructor(
-    public zone: NgZone, 
-    private backgroundGeolocation:BackgroundGeolocation,
+    public zone: NgZone,
+    private backgroundGeolocation: BackgroundGeolocation,
     private geolocation: Geolocation,
     private notification: Notification,
     public storage: Storage
   ) {
-    
+
   }
 
   startTracking() {
     // Background Tracking
 
-    let config:BackgroundGeolocationConfig = {
+    let config: BackgroundGeolocationConfig = {
       desiredAccuracy: 0,
       stationaryRadius: 20,
       distanceFilter: 10,
       debug: false,
       interval: 5000
     };
-  this.backgroundGeolocation.configure(config)
-  .then((location: BackgroundGeolocationResponse) => {
+    this.backgroundGeolocation.configure(config)
+      .then((location: BackgroundGeolocationResponse) => {
 
-      //console.log('BackgroundGeolocation:  ' + location.latitude + ',' + location.longitude);
+        //console.log('BackgroundGeolocation:  ' + location.latitude + ',' + location.longitude);
 
-      // Run update inside of Angular's zone
-      this.zone.run(() => {
-        this.lat = location.latitude;
-        this.lng = location.longitude;
+        // Run update inside of Angular's zone
+        this.zone.run(() => {
+          this.lat = location.latitude;
+          this.lng = location.longitude;
+        });
+
+      }, (err) => {
+        console.log(err);
       });
-
-     }, (err) => {
-
-      console.log(err);
-
-    });
 
     // Foreground Tracking
 
@@ -73,8 +71,8 @@ export class LocationTracker {
 
     });
 
-     // Turn ON the background-geolocation system.
-     //disable dulu
+    // Turn ON the background-geolocation system.
+    //disable dulu
     this.backgroundGeolocation.start();
   }
 
@@ -86,35 +84,35 @@ export class LocationTracker {
 
   }
 
-  public sendLocPandu(flag, noSpkPandu:number=0){
+  public sendLocPandu(flag, noSpkPandu: number = 0) {
     var mDate = moment().format('YYYY-MM-DD[T]HH:mm:ss');
     var username = this.notification.username;
-    
-    this.storage.get('profile').then( profile => {
-      if(profile != null){
-        var panduLocMsg = { 
-              nipPandu: username, 
-              namaPetugas:profile.namaPetugas,
-              longitude: this.lng, 
-              latitude: this.lat, 
-              tglAktivitas: mDate,
-              flag:flag,
-              noSpkPandu:noSpkPandu
-          };
-        this.notification.sendMessage(JSON.stringify( panduLocMsg ), "/pandu/location/"+username)
+
+    this.storage.get('profile').then(profile => {
+      if (profile != null) {
+        var panduLocMsg = {
+          nipPandu: username,
+          namaPetugas: profile.namaPetugas,
+          longitude: this.lng,
+          latitude: this.lat,
+          tglAktivitas: mDate,
+          flag: flag,
+          noSpkPandu: noSpkPandu
+        };
+        this.notification.sendMessage(JSON.stringify(panduLocMsg), "/pandu/location/" + username)
       }
     })
-    
+
   }
 
-  public startPanduLocation(param:boolean, noSpkPandu:number=0){
-    if(param){
+  public startPanduLocation(param: boolean, noSpkPandu: number = 0) {
+    if (param) {
       this.startTracking();
-      this.intMulaiPandu = setInterval( () => {
+      this.intMulaiPandu = setInterval(() => {
 
         this.sendLocPandu(1, noSpkPandu);
       }, 1 * 15 * 1000)
-    }else{
+    } else {
       console.log('clear interval pandu location');
       this.stopTracking()
       clearInterval(this.intMulaiPandu);

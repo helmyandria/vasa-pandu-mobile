@@ -192,6 +192,8 @@ export class PanduApp {
           text: "Disconnected.."
         })
         this.backgroundMode.enable();
+        console.log('bg mode hitted');
+        
       } //end of check platform
 
       /**
@@ -204,6 +206,7 @@ export class PanduApp {
       });
 
       setTimeout(() => {
+        console.log('startTracking');
         this.locationTracker.startTracking();
         setInterval(() => {
           this.locationTracker.sendLocPandu(0)
